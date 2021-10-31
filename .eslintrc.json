@@ -4,8 +4,8 @@
     "es2021": true
   },
   "extends": [
-    "plugin:react/recommended",
-    "airbnb"
+    "eslint:recommended",
+    "plugin:react/recommended"
   ],
   "settings": {
     "react": {
@@ -16,7 +16,7 @@
     "ecmaFeatures": {
       "jsx": true
     },
-    "ecmaVersion": 8,
+    "ecmaVersion": 12,
     "sourceType": "module"
   },
   "plugins": [
