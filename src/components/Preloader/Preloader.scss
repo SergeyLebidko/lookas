@@ -1,3 +1,108 @@
-.preloader {
+@import "../../style/presets";
 
+$fast-slow-bezier: cubic-bezier(0.215, 0.61, 0.355, 1);
+$slow-fast-bezier: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+
+@keyframes pulsar_rise {
+  from {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    top: -50vh;
+    animation-timing-function: $slow-fast-bezier;
+  }
+
+  to {
+    width: 3em;
+    height: 3em;
+    opacity: 1;
+    top: 0;
+  }
+}
+
+@keyframes pulsar_jump {
+  // Шарик коснулся "земли"
+  0% {
+    height: 3em;
+    top: 0;
+    animation-timing-function: $fast-slow-bezier;
+  }
+
+  // Шарик сжался при падении
+  10% {
+    height: 1.5em;
+    top: 1.5em;
+    animation-timing-function: $slow-fast-bezier;
+  }
+
+  // Шарик восстановил размеры
+  20% {
+    height: 3em;
+    top: 0;
+  }
+
+  // Шарик подпрыгнул вверх
+  65% {
+    top: -20vh;
+    animation-timing-function: $slow-fast-bezier;
+    height: 3em;
+  }
+
+  // Шарик снова на "земле"
+  100% {
+    height: 3em;
+    top: 0;
+  }
+}
+
+@keyframes pulsar_full {
+  0% {
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    animation-timing-function: linear;
+  }
+
+  100% {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+}
+
+.preloader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__pulsar {
+    background-color: $main-black;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    position: relative;
+  }
+
+  &__rised_pulsar {
+    animation-name: pulsar_rise;
+    animation-duration: 800ms;
+  }
+
+  &__jumped_pulsar {
+    animation-name: pulsar_jump;
+    animation-duration: 700ms;
+    animation-iteration-count: infinite;
+  }
+
+  &__full_pulsar {
+    animation-name: pulsar_full;
+    animation-duration: 250ms;
+    animation-fill-mode: forwards;
+  }
 }
