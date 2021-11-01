@@ -1,0 +1,28 @@
+@import "../../../style/presets";
+
+@keyframes cover_rise {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.main {
+
+  &__cover {
+    opacity: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: 0 0;
+  }
+
+  &__cover_rise {
+    animation-name: cover_rise;
+    animation-duration: 1000ms;
+    animation-fill-mode: forwards;
+  }
+}
