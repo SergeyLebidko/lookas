@@ -2,9 +2,9 @@ import React, {useRef, useState} from "react";
 import classNames from "classnames";
 import "./Preloader.scss";
 
-const RISE_MODE = 'rm';
-const JUMP_MODE = 'jm';
-const FULL_MODE = 'fm';
+const RISE_MODE = 'rise';
+const JUMP_MODE = 'jump';
+const REMOVE_MODE = 'remove';
 
 function Preloader() {
     const [animation, setAnimation] = useState(RISE_MODE);
@@ -15,7 +15,7 @@ function Preloader() {
         {
             'preloader__rised_pulsar': animation === RISE_MODE,
             'preloader__jumped_pulsar': animation === JUMP_MODE,
-            'preloader__full_pulsar': animation === FULL_MODE
+            'preloader__remove_pulsar': animation === REMOVE_MODE
         }
     );
 
@@ -25,7 +25,7 @@ function Preloader() {
             return;
         }
         if (animation === JUMP_MODE) jumpCount.current++;
-        if (jumpCount.current === 5) setAnimation(FULL_MODE);
+        if (jumpCount.current === 5) setAnimation(REMOVE_MODE);
     }
 
     return (

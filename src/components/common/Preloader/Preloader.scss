@@ -55,18 +55,20 @@ $slow-fast-bezier: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   }
 }
 
-@keyframes pulsar_full {
-  0% {
+@keyframes pulsar_remove {
+  from {
     width: 3em;
     height: 3em;
-    border-radius: 50%;
-    animation-timing-function: linear;
+    opacity: 1;
+    top: 0;
+    animation-timing-function: $slow-fast-bezier;
   }
 
-  100% {
-    width: 100%;
-    height: 100%;
-    border-radius: 0;
+  to {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    top: 50vh;
   }
 }
 
@@ -100,8 +102,8 @@ $slow-fast-bezier: cubic-bezier(0.55, 0.055, 0.675, 0.19);
     animation-iteration-count: infinite;
   }
 
-  &__full_pulsar {
-    animation-name: pulsar_full;
+  &__remove_pulsar {
+    animation-name: pulsar_remove;
     animation-duration: 250ms;
     animation-fill-mode: forwards;
   }
