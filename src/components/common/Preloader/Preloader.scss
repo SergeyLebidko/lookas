@@ -84,7 +84,7 @@ $slow-fast-bezier: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   align-items: center;
 
   &__pulsar {
-    background-color: $dark-gray;
+    border: 3px solid $dark-gray;
     width: 3em;
     height: 3em;
     border-radius: 50%;
