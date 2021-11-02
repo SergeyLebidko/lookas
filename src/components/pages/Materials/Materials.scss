@@ -1,12 +1,6 @@
 @import "../../../style/presets";
 
 .materials {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-
   background-image: linear-gradient(to right bottom, #bbcbf6, #b5daf3, #c1e4ec, #d8ece9, #eff2f0);
   @include temp;
 

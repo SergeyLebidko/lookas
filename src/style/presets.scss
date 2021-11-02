@@ -16,6 +16,11 @@ $large-start: 1024px;
 
 // TODO Временный тестовый миксин
 @mixin temp {
+  width: 100vw;
+  height: 100vh;
+  flex-shrink: 0;
+  min-width: 1024px;
+
   display: flex;
   flex-direction: column;
   justify-content: center;

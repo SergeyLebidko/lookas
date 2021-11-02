@@ -1,12 +1,6 @@
 @import "../../../style/presets";
 
 .command {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-
   background-image: linear-gradient(to right bottom, #e75e99, #ea5082, #ea4269, #e6384f, #de3333);
   @include temp;
 
