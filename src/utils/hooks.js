@@ -47,3 +47,19 @@ export function useLineControl(elementRef) {
 
     return line;
 }
+
+export function useScrollControl(elementRef) {
+    useEffect(() => {
+        if (!elementRef.current) return;
+
+        function wheelHandler(event) {
+            const {deltaY} = event;
+            if (deltaY < 0) elementRef.current.scrollLeft -= 50;
+            if (deltaY > 0) elementRef.current.scrollLeft += 50;
+        }
+
+        elementRef.current.addEventListener('mousewheel', wheelHandler);
+
+        return () => elementRef.current.removeEventListener('mousewheel', wheelHandler);
+    }, []);
+}

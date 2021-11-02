@@ -9,6 +9,7 @@ import Contacts from "../pages/Contacts/Contacts";
 import {appContext} from "../../utils/context";
 import {IMG_COUNT} from "../../constants/settings";
 import "./App.scss";
+import {useScrollControl} from "../../utils/hooks";
 
 function App() {
     const appRef = useRef(null);
@@ -23,6 +24,8 @@ function App() {
     useEffect(() => {
         for (let i = 0; i < IMG_COUNT; i++) setTimeout(() => imgLoadHandler(), i * 200);
     }, []);
+
+    useScrollControl(appRef);
 
     return (
         <div className="app" ref={appRef}>
