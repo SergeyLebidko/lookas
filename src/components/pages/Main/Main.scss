@@ -1,25 +1,5 @@
 @import "../../../style/presets";
 
-@keyframes cover_rise {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes text_rise {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
 .main {
   position: absolute;
   top: 0;
@@ -27,79 +7,8 @@
   width: 100%;
   height: 100%;
 
-  &__title, &__description {
-    opacity: 0;
-    letter-spacing: 8px;
-    position: absolute;
-    right: 3rem;
-    transition: all 200ms;
-  }
-
-  &__title {
-    font-family: 'Josefin Slab', 'sans-serif';
-    color: $dark-gray;
-    font-size: 1.5em;
-    top: 3rem;
-  }
-
-  &__description {
-    font-family: Roboto, 'sans-serif';
-    color: $light-gray;
-    font-size: 0.8em;
-    top: 5rem;
-  }
-
-  &__title_rise {
-    animation-name: text_rise;
-    animation-duration: 1000ms;
-    animation-fill-mode: forwards;
-    animation-delay: 1000ms;
-  }
-
-  &__description_rise {
-    animation-name: text_rise;
-    animation-duration: 1000ms;
-    animation-fill-mode: forwards;
-    animation-delay: 1000ms;
-  }
-
-  &__cover {
-    opacity: 0;
-    width: 120vw;
-    height: 120vh;
-    object-fit: cover;
-    object-position: 20% 80%;
-  }
-
-  &__cover_rise {
-    animation-name: cover_rise;
-    animation-duration: 1000ms;
-    animation-fill-mode: forwards;
-  }
-}
-
-@media (min-width: $medium-start) and (max-width: $medium-end) {
-  .main {
-    &__title {
-      font-size: 2.5em;
-    }
-
-    &__description {
-      font-size: 1em;
-      top: 6rem;
-    }
-  }
-}
-
-@media (min-width: $large-start) {
-  .main {
-    &__title {
-      font-size: 5em;
-    }
-
-    &__description {
-      font-size: 1.5em;
-      top: 9rem;
-    }
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

@@ -1,4 +1,4 @@
-import React, {useRef, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import Preloader from "../common/Preloader/Preloader";
 import Main from "../pages/Main/Main";
 import {appContext} from "../../utils/context";
@@ -13,6 +13,11 @@ function App() {
 
     const imgLoadHandler = () => setImgLoadCount(oldValue => oldValue + 1);
     const hidePreloader = () => setHasPreloader(false);
+
+    // TODO. Тестовый код имитирующий загрузку изображений. В дальнейшем должен быть удален
+    useEffect(() => {
+        for (let i = 0; i < IMG_COUNT; i++) setTimeout(() => imgLoadHandler(), i * 200);
+    }, []);
 
     return (
         <div className="app" ref={appRef}>
