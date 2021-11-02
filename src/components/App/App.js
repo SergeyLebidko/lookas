@@ -4,7 +4,6 @@ import Main from "../pages/Main/Main";
 import {appContext} from "../../utils/context";
 import {IMG_COUNT} from "../../constants/settings";
 import "./App.scss";
-import {useCursorPosition, useLineControl} from "../../utils/hooks";
 
 function App() {
     const appRef = useRef(null);
@@ -14,11 +13,6 @@ function App() {
 
     const imgLoadHandler = () => setImgLoadCount(oldValue => oldValue + 1);
     const hidePreloader = () => setHasPreloader(false);
-
-    // TODO Тестовый вывод. В дальнейшем удалить
-    const {x, y} = useCursorPosition(appRef);
-    const line = useLineControl(appRef);
-    console.log(`x=${x} y=${y} line=${line}`);
 
     return (
         <div className="app" ref={appRef}>
