@@ -4,6 +4,7 @@ import Main from "../pages/Main/Main";
 import About from "../pages/About/About";
 import Materials from "../pages/Materials/Materials";
 import Command from "../pages/Command/Command";
+import Learn from "../pages/Learn/Learn";
 import {appContext} from "../../utils/context";
 import {IMG_COUNT} from "../../constants/settings";
 import "./App.scss";
@@ -29,6 +30,7 @@ function App() {
                 <About/>
                 <Materials/>
                 <Command/>
+                <Learn/>
             </appContext.Provider>
             {hasPreloader && <Preloader hasAllLoad={IMG_COUNT === imgLoadCount} hidePreloader={hidePreloader}/>}
         </div>
