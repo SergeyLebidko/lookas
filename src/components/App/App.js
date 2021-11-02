@@ -25,11 +25,11 @@ function App() {
         for (let i = 0; i < IMG_COUNT; i++) setTimeout(() => imgLoadHandler(), i * 200);
     }, []);
 
-    useScrollControl(appRef);
+    const line = useScrollControl(appRef);
 
     return (
         <div className="app" ref={appRef}>
-            <appContext.Provider value={{hasPreloader}}>
+            <appContext.Provider value={{hasPreloader, line}}>
                 <Main/>
                 <About/>
                 <Materials/>

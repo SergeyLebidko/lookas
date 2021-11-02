@@ -1,7 +1,9 @@
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import {V_DIRECTION_LIMIT, H_DIRECTION_LIMIT} from "../constants/settings";
 
 export function useScrollControl(elementRef) {
+    const [line, setLine] = useState(0);
+
     useEffect(() => {
         if (!elementRef.current) return;
 
@@ -37,8 +39,7 @@ export function useScrollControl(elementRef) {
         }
 
         function scrollHandler() {
-            // TODO Тестовый вывод положения
-            console.log(elementRef.current.scrollTop + elementRef.current.scrollLeft);
+            setLine(elementRef.current.scrollTop + elementRef.current.scrollLeft);
         }
 
         elementRef.current.addEventListener('mousewheel', wheelHandler);
@@ -51,4 +52,6 @@ export function useScrollControl(elementRef) {
             window.removeEventListener('resize', resizeHandler);
         }
     }, []);
+
+    return line;
 }
