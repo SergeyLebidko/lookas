@@ -36,11 +36,18 @@ export function useScrollControl(elementRef) {
             oldWidth = curWidth;
         }
 
+        function scrollHandler() {
+            // TODO Тестовый вывод положения
+            console.log(elementRef.current.scrollTop + elementRef.current.scrollLeft);
+        }
+
         elementRef.current.addEventListener('mousewheel', wheelHandler);
+        elementRef.current.addEventListener('scroll', scrollHandler);
         window.addEventListener('resize', resizeHandler);
 
         return () => {
             elementRef.current.removeEventListener('mousewheel', wheelHandler);
+            elementRef.current.removeEventListener('scroll', scrollHandler);
             window.removeEventListener('resize', resizeHandler);
         }
     }, []);
