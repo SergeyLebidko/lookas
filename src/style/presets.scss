@@ -9,6 +9,8 @@ $h-direction-limit: 1024px;
 // TODO Временный тестовый миксин
 @mixin temp {
   width: 100vw;
+  min-width: 320px;
+
   height: 100vh;
   min-height: 640px;
 
