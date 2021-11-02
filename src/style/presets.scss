@@ -1,6 +1,8 @@
 // Пресеты цветов
 $main-black: hsl(0, 0%, 20%);
+
 $main-white: hsl(0, 0%, 100%);
+$muted-white: hsl(0, 0%, 80%);
 
 $dark-gray: hsl(240, 13%, 30%);
 $gray: hsl(240, 13%, 45%);
@@ -22,12 +24,10 @@ $large-start: 1024px;
   h1 {
     font-family: Roboto, 'sans-serif';
     font-size: 2em;
-    color: $dark-gray;
   }
 
   p {
     font-family: Roboto, 'sans-serif';
     font-size: 1.2em;
-    color: $gray;
   }
 }

@@ -1,6 +1,7 @@
 import React, {useEffect, useRef, useState} from "react";
 import Preloader from "../common/Preloader/Preloader";
 import Main from "../pages/Main/Main";
+import About from "../pages/About/About";
 import {appContext} from "../../utils/context";
 import {IMG_COUNT} from "../../constants/settings";
 import "./App.scss";
@@ -22,7 +23,8 @@ function App() {
     return (
         <div className="app" ref={appRef}>
             <appContext.Provider value={{hasPreloader}}>
-                <Main imgLoadHandler={imgLoadHandler}/>
+                <Main/>
+                <About/>
             </appContext.Provider>
             {hasPreloader && <Preloader hasAllLoad={IMG_COUNT === imgLoadCount} hidePreloader={hidePreloader}/>}
         </div>
