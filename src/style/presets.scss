@@ -2,11 +2,32 @@
 $main-black: hsl(0, 0%, 20%);
 $main-white: hsl(0, 0%, 100%);
 
-$dark-gray: hsl(240, 13%, 31%);
-$light-gray: hsl(240, 10%, 60%);
+$dark-gray: hsl(240, 13%, 30%);
+$gray: hsl(240, 13%, 45%);
+$light-gray: hsl(240, 13%, 60%);
 
 // Пресеты размеров
 $small-end: 768px;
 $medium-start: 769px;
 $medium-end: 1023px;
 $large-start: 1024px;
+
+// TODO Временный тестовый миксин
+@mixin temp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-family: Roboto, 'sans-serif';
+    font-size: 2em;
+    color: $dark-gray;
+  }
+
+  p {
+    font-family: Roboto, 'sans-serif';
+    font-size: 1.2em;
+    color: $gray;
+  }
+}
