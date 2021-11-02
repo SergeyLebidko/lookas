@@ -1,14 +1,5 @@
 @import "../../../style/presets";
 
 .learn {
-  background-image: linear-gradient(to right bottom, #c3e75e, #4bdc8d, #00c7be, #00aad7, #1e89cd);
   @include temp;
-
-  h1 {
-    color: $main-white;
-  }
-
-  p {
-    color: $muted-white;
-  }
 }

@@ -7,7 +7,7 @@ function Command() {
     if (hasPreloader) return null;
 
     return (
-        <main className="command">
+        <main className="command bordered">
             <h1>Вокруг меня коллектив профессионалов</h1>
             <p>
                 Я работаю в команде с флористами, фотографами, ведущими, осветителями,

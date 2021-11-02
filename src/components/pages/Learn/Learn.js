@@ -7,7 +7,7 @@ function Learn() {
     if (hasPreloader) return null;
 
     return (
-        <main className="learn">
+        <main className="learn bordered">
             <h1>Я постоянно прокачиваю свои навыки</h1>
             <p>Участвую в семинарах, конференциях, мастер-классах. Учусь сама и учу других.</p>
         </main>

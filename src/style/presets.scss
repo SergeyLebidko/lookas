@@ -1,26 +1,20 @@
 // Пресеты цветов
-$main-black: hsl(0, 0%, 20%);
-
-$main-white: hsl(0, 0%, 100%);
-$muted-white: hsl(0, 0%, 90%);
-
 $dark-gray: hsl(240, 13%, 30%);
 $gray: hsl(240, 13%, 45%);
-$light-gray: hsl(240, 13%, 60%);
 
-// Пресеты размеров
-$small-end: 768px;
-$medium-start: 769px;
-$medium-end: 1023px;
-$large-start: 1024px;
+// Граница изменения направления слайдов
+$v-direction-limit: 1023px;
+$h-direction-limit: 1024px;
 
 // TODO Временный тестовый миксин
 @mixin temp {
   width: 100vw;
   height: 100vh;
+  min-height: 640px;
+
+  padding: 2em;
+
   flex-shrink: 0;
-  min-width: 1024px;
-  max-width: 1920px;
 
   display: flex;
   flex-direction: column;
@@ -30,10 +24,29 @@ $large-start: 1024px;
   h1 {
     font-family: Roboto, 'sans-serif';
     font-size: 2em;
+    color: $dark-gray;
   }
 
   p {
     font-family: Roboto, 'sans-serif';
     font-size: 1.2em;
+    color: $gray;
+    text-align: center;
   }
 }
+
+// TODO Временные стили для границ слайдов
+.bordered + .bordered {
+  border-top: 1px solid $gray;
+  border-left: none;
+}
+
+@media (min-width: $h-direction-limit) {
+  .bordered + .bordered {
+    border-top: none;
+    border-left: 1px solid $gray;
+  }
+}
+
+
+

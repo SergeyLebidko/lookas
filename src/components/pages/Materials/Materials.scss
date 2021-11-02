@@ -1,14 +1,5 @@
 @import "../../../style/presets";
 
 .materials {
-  background-image: linear-gradient(to right bottom, #bbcbf6, #b5daf3, #c1e4ec, #d8ece9, #eff2f0);
   @include temp;
-
-  h1 {
-    color: $dark-gray;
-  }
-
-  p {
-    color: $gray;
-  }
 }
