@@ -1,5 +1,11 @@
 import {useEffect, useState} from "react";
-import {V_DIRECTION_LIMIT, H_DIRECTION_LIMIT, V_DIRECTION, H_DIRECTION} from "../constants/settings";
+import {
+    V_DIRECTION_LIMIT,
+    H_DIRECTION_LIMIT,
+    V_DIRECTION,
+    H_DIRECTION,
+    SCROLL_STEPS_LIMIT, SCROLL_TIMING, SCROLL_DELTA
+} from "../constants/settings";
 import {getDirection} from "./utils";
 
 export function useScrollControl(elementRef) {
@@ -18,13 +24,18 @@ export function useScrollControl(elementRef) {
             const {innerWidth} = window;
             if (innerWidth <= V_DIRECTION_LIMIT) return;
 
+            // В силу определенных ограничений функции scrollTo из JS, я решил написать свой вариант этой функции
+            function scrollTo(delta, steps = 0) {
+                const curScrollLeft = elementRef.current.scrollLeft;
+                elementRef.current.scrollLeft += delta;
+                if (elementRef.current.scrollLeft !== curScrollLeft && steps < SCROLL_STEPS_LIMIT) {
+                    setTimeout(() => scrollTo(delta, steps + 1), SCROLL_TIMING);
+                }
+            }
+
             const {deltaY} = event;
-            if (deltaY < 0) {
-                for (let index = 0; index < 30; index++) setTimeout(() => elementRef.current.scrollLeft -= 2, index * 10);
-            }
-            if (deltaY > 0) {
-                for (let index = 0; index < 30; index++) setTimeout(() => elementRef.current.scrollLeft += 2, index * 10);
-            }
+            if (deltaY < 0) scrollTo(-SCROLL_DELTA,);
+            if (deltaY > 0) scrollTo(SCROLL_DELTA,);
         }
 
         let oldWidth = window.innerWidth;
