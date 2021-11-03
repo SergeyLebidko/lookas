@@ -14,23 +14,16 @@ export function useScrollControl(elementRef) {
         if (!elementRef.current) return;
 
         function wheelHandler(event) {
-            const {deltaY} = event;
+            // Для вертикальной ориентации экрана управлять скроллингом из js не нужно
             const {innerWidth} = window;
+            if (innerWidth <= V_DIRECTION_LIMIT) return;
+
+            const {deltaY} = event;
             if (deltaY < 0) {
-                if (innerWidth <= V_DIRECTION_LIMIT) {
-                    for (let index = 0; index < 30; index++) setTimeout(() => elementRef.current.scrollTop -= 2, index * 10);
-                }
-                if (innerWidth >= H_DIRECTION_LIMIT) {
-                    for (let index = 0; index < 30; index++) setTimeout(() => elementRef.current.scrollLeft -= 2, index * 10);
-                }
+                for (let index = 0; index < 30; index++) setTimeout(() => elementRef.current.scrollLeft -= 2, index * 10);
             }
             if (deltaY > 0) {
-                if (innerWidth <= V_DIRECTION_LIMIT) {
-                    for (let index = 0; index < 30; index++) setTimeout(() => elementRef.current.scrollTop += 2, index * 10);
-                }
-                if (innerWidth >= H_DIRECTION_LIMIT) {
-                    for (let index = 0; index < 30; index++) setTimeout(() => elementRef.current.scrollLeft += 2, index * 10);
-                }
+                for (let index = 0; index < 30; index++) setTimeout(() => elementRef.current.scrollLeft += 2, index * 10);
             }
         }
 
