@@ -7,10 +7,10 @@ function Contacts() {
     if (hasPreloader) return null;
 
     return (
-        <main className="contacts bordered">
+        <section className="contacts bordered">
             <h1>Связаться со мной можно тут</h1>
             <p>...здесь будет список ссылок на vk, instagram, telegram, whatsapp, email...</p>
-        </main>
+        </section>
     );
 }
 

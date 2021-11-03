@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useRef} from "react";
 import {appContext} from "../../../utils/context";
-import "./Learn.scss";
 import {H_DIRECTION, V_DIRECTION} from "../../../constants/settings";
+import "./Learn.scss";
 
 function Learn() {
     const {hasPreloader, line, direction} = useContext(appContext);
@@ -24,10 +24,10 @@ function Learn() {
     if (hasPreloader) return null;
 
     return (
-        <main className="learn bordered" ref={learnRef}>
+        <section className="learn bordered" ref={learnRef}>
             <h1>Я постоянно прокачиваю свои навыки</h1>
             <p>Участвую в семинарах, конференциях, мастер-классах. Учусь сама и учу других.</p>
-        </main>
+        </section>
     );
 }
 

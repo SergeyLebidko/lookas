@@ -7,10 +7,10 @@ function About() {
     if (hasPreloader) return null;
 
     return (
-        <main className="about bordered">
+        <section className="about bordered">
             <h1>Привет! Меня зовут Таня!</h1>
             <p>Я дизайнер-декоратор с более чем десятилетним опытом работы</p>
-        </main>
+        </section>
     );
 }
 
