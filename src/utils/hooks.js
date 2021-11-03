@@ -1,25 +1,34 @@
 import {useEffect, useState} from "react";
 import {V_DIRECTION_LIMIT, H_DIRECTION_LIMIT} from "../constants/settings";
+import {getDirection} from "./utils";
 
 export function useScrollControl(elementRef) {
-    const [line, setLine] = useState(0);
+    const [scrollControlData, setScrollControlData] = useState(
+        {
+            line: 0,
+            direction: getDirection(window.innerWidth)
+        }
+    );
 
     useEffect(() => {
         if (!elementRef.current) return;
 
         function wheelHandler(event) {
             const {deltaY} = event;
+            const {innerWidth} = window;
             if (deltaY < 0) {
-                if (window.innerWidth < 1024) {
+                if (innerWidth <= V_DIRECTION_LIMIT) {
                     for (let index = 0; index < 30; index++) setTimeout(() => elementRef.current.scrollTop -= 2, index * 10);
-                } else {
+                }
+                if (innerWidth >= H_DIRECTION_LIMIT) {
                     for (let index = 0; index < 30; index++) setTimeout(() => elementRef.current.scrollLeft -= 2, index * 10);
                 }
             }
             if (deltaY > 0) {
-                if (window.innerWidth < 1024) {
+                if (innerWidth <= V_DIRECTION_LIMIT) {
                     for (let index = 0; index < 30; index++) setTimeout(() => elementRef.current.scrollTop += 2, index * 10);
-                } else {
+                }
+                if (innerWidth >= H_DIRECTION_LIMIT) {
                     for (let index = 0; index < 30; index++) setTimeout(() => elementRef.current.scrollLeft += 2, index * 10);
                 }
             }
@@ -36,10 +45,12 @@ export function useScrollControl(elementRef) {
                 elementRef.current.scrollTop = 0;
             }
             oldWidth = curWidth;
+            setScrollControlData({line: 0, direction: getDirection(curWidth)});
         }
 
         function scrollHandler() {
-            setLine(elementRef.current.scrollTop + elementRef.current.scrollLeft);
+            const line = elementRef.current.scrollTop + elementRef.current.scrollLeft
+            setScrollControlData(oldData => ({...oldData, line}));
         }
 
         elementRef.current.addEventListener('mousewheel', wheelHandler);
@@ -53,5 +64,5 @@ export function useScrollControl(elementRef) {
         }
     }, []);
 
-    return line;
+    return scrollControlData;
 }

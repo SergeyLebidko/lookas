@@ -1,19 +1,25 @@
 import React, {useContext, useEffect, useRef} from "react";
 import {appContext} from "../../../utils/context";
 import "./Learn.scss";
+import {H_DIRECTION, V_DIRECTION} from "../../../constants/settings";
 
 function Learn() {
-    const {hasPreloader, line} = useContext(appContext);
+    const {hasPreloader, line, direction} = useContext(appContext);
 
     const learnRef = useRef(null);
 
     useEffect(() => {
         if (!learnRef.current) return;
+        const {innerWidth, innerHeight} = window;
+        const {x, y, width, height} = learnRef.current.getBoundingClientRect();
 
-        console.log(learnRef.current.getBoundingClientRect());
-
-        if (learnRef.current.getBoundingClientRect().x < line) console.log('Learn в зоне видимости');
-    }, [line]);
+        if (direction === V_DIRECTION) {
+            console.log(y < innerHeight && (y + height) > 0 ? 'Learn виден' : 'Learn не виден');
+        }
+        if (direction === H_DIRECTION) {
+            console.log(x < innerWidth && (x + width) > 0 ? 'Learn виден' : 'Learn не виден');
+        }
+    }, [line, direction]);
 
     if (hasPreloader) return null;
 
