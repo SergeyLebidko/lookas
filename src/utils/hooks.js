@@ -42,7 +42,7 @@ export function useScrollControl(elementRef) {
         }
 
         function scrollHandler() {
-            const line = elementRef.current.scrollTop + elementRef.current.scrollLeft
+            const line = elementRef.current.scrollTop + elementRef.current.scrollLeft;
             setScrollControlData(oldData => ({...oldData, line}));
         }
 
