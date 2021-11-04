@@ -15,8 +15,8 @@ function App() {
     const appRef = useRef(null);
 
     const [hasContent, setHasContent] = useState(false);
-
     const [hasPreloader, setHasPreloader] = useState(true);
+
     const [imgLoadCount, setImgLoadCount] = useState(0);
 
     const mountContent = () => setHasContent(true);

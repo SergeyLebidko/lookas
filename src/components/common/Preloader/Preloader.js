@@ -30,13 +30,8 @@ function Preloader({mountContent, hasAllLoad, hidePreloader}) {
     );
 
     const pulsarAnimationEndHandler = () => {
-        if (pulsarAnimation === PULSAR_RISE_MODE) {
-            setPulsarAnimation(PULSAR_JUMP_MODE);
-            return;
-        }
-        if (pulsarAnimation === PULSAR_REMOVE_MODE) {
-            setCapAnimation(CAP_REMOVE_MODE);
-        }
+        if (pulsarAnimation === PULSAR_RISE_MODE) setPulsarAnimation(PULSAR_JUMP_MODE);
+        if (pulsarAnimation === PULSAR_REMOVE_MODE) setCapAnimation(CAP_REMOVE_MODE);
     }
 
     const pulsarAnimationIterationHandler = () => {
