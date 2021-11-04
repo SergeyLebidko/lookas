@@ -1,6 +1,5 @@
 // Пресеты цветов
-$dark-gray: hsl(240, 13%, 30%);
-$gray: hsl(240, 13%, 45%);
+$black: rgb(50, 50, 50);
 
 // Граница изменения направления слайдов
 $v-direction-limit: 1023px;
@@ -26,28 +25,26 @@ $h-direction-limit: 1024px;
   h1 {
     font-family: Roboto, 'sans-serif';
     font-size: 2em;
-    color: $dark-gray;
     text-align: center;
   }
 
   p {
     font-family: Roboto, 'sans-serif';
     font-size: 1.2em;
-    color: $gray;
     text-align: center;
   }
 }
 
 // TODO Временные стили для границ слайдов
 .bordered + .bordered {
-  border-top: 1px solid $gray;
+  border-top: 1px solid $black;
   border-left: none;
 }
 
 @media (min-width: $h-direction-limit) {
   .bordered + .bordered {
     border-top: none;
-    border-left: 1px solid $gray;
+    border-left: 1px solid $black;
   }
 }
 

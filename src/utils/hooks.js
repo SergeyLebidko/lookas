@@ -22,11 +22,7 @@ export function useScrollControl(elementRef, scrollEnabled) {
         if (!elementRef.current) return;
 
         function wheelHandler(event) {
-            if (!scrollEnabled) return;
-
-            // Для вертикальной ориентации экрана управлять скроллингом из js не нужно
-            const {innerWidth} = window;
-            if (innerWidth <= V_DIRECTION_LIMIT) return;
+            if (!scrollEnabled || window.innerWidth <= V_DIRECTION_LIMIT) return;
 
             // В силу определенных ограничений функции scrollTo из JS, я решил написать свой вариант этой функции
             function scrollTo(delta, steps = 0) {
