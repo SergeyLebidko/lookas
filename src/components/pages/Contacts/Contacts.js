@@ -1,11 +1,7 @@
-import React, {useContext} from "react";
-import {appContext} from "../../../utils/context";
+import React from "react";
 import "./Contacts.scss";
 
 function Contacts() {
-    const {hasPreloader} = useContext(appContext);
-    if (hasPreloader) return null;
-
     return (
         <section className="contacts bordered">
             <h1>Связаться со мной можно тут</h1>

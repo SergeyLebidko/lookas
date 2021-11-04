@@ -1,10 +1,7 @@
-import React, {useContext} from "react";
-import {appContext} from "../../../utils/context";
+import React from "react";
 import "./Command.scss";
 
 function Command() {
-    const {hasPreloader} = useContext(appContext);
-    if (hasPreloader) return null;
 
     return (
         <section className="command bordered">

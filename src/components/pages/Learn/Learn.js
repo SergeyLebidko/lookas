@@ -1,11 +1,7 @@
-import React, {useContext} from "react";
-import {appContext} from "../../../utils/context";
+import React from "react";
 import "./Learn.scss";
 
 function Learn() {
-    const {hasPreloader} = useContext(appContext);
-    if (hasPreloader) return null;
-
     return (
         <section className="learn bordered">
             <h1>Я постоянно прокачиваю свои навыки</h1>

@@ -79,12 +79,14 @@ $slow-fast-bezier: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   width: 100%;
   height: 100%;
 
+  background-color: rgb(50, 50, 50);
+
   display: flex;
   justify-content: center;
   align-items: center;
 
   &__pulsar {
-    border: 3px solid $dark-gray;
+    border: 2px solid whitesmoke;
     width: 3em;
     height: 3em;
     border-radius: 50%;

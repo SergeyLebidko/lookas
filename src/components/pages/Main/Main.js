@@ -1,11 +1,7 @@
-import React, {useContext} from "react";
-import {appContext} from "../../../utils/context";
+import React from "react";
 import "./Main.scss";
 
 function Main() {
-    const {hasPreloader} = useContext(appContext);
-    if (hasPreloader) return null;
-
     return (
         <section className="main bordered">
             <h1>Tanya Lookas</h1>

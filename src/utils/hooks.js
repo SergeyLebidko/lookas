@@ -4,7 +4,9 @@ import {
     H_DIRECTION_LIMIT,
     V_DIRECTION,
     H_DIRECTION,
-    SCROLL_STEPS_LIMIT, SCROLL_TIMING, SCROLL_DELTA
+    SCROLL_STEPS_LIMIT,
+    SCROLL_TIMING,
+    SCROLL_DELTA
 } from "../constants/settings";
 import {getDirection} from "./utils";
 

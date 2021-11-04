@@ -1,11 +1,7 @@
-import React, {useContext} from "react";
-import {appContext} from "../../../utils/context";
+import React from "react";
 import "./About.scss";
 
 function About() {
-    const {hasPreloader} = useContext(appContext);
-    if (hasPreloader) return null;
-
     return (
         <section className="about bordered">
             <h1>Привет! Меня зовут Таня!</h1>

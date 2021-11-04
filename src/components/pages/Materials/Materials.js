@@ -1,11 +1,7 @@
-import React, {useContext} from "react";
-import {appContext} from "../../../utils/context";
+import React from "react";
 import "./Materials.scss";
 
 function Materials() {
-    const {hasPreloader} = useContext(appContext);
-    if (hasPreloader) return null;
-
     return (
         <section className="materials bordered">
             <h1>Я работаю с самыми разными материалами</h1>
