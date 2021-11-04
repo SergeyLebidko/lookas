@@ -14,9 +14,12 @@ import {useScrollControl} from "../../utils/hooks";
 function App() {
     const appRef = useRef(null);
 
+    const [hasContent, setHasContent] = useState(false);
+
     const [hasPreloader, setHasPreloader] = useState(true);
     const [imgLoadCount, setImgLoadCount] = useState(0);
 
+    const mountContent = () => setHasContent(true);
     const imgLoadHandler = () => setImgLoadCount(oldValue => oldValue + 1);
     const hidePreloader = () => setHasPreloader(false);
 
@@ -30,14 +33,24 @@ function App() {
     return (
         <div className="app" ref={appRef}>
             <appContext.Provider value={{hasPreloader, line, direction}}>
-                <Main/>
-                <About/>
-                <Materials/>
-                <Command/>
-                <Learn/>
-                <Contacts/>
+                {hasContent &&
+                <>
+                    <Main/>
+                    <About/>
+                    <Materials/>
+                    <Command/>
+                    <Learn/>
+                    <Contacts/>
+                </>
+                }
             </appContext.Provider>
-            {hasPreloader && <Preloader hasAllLoad={IMG_COUNT === imgLoadCount} hidePreloader={hidePreloader}/>}
+            {hasPreloader &&
+            <Preloader
+                mountContent={mountContent}
+                hasAllLoad={IMG_COUNT === imgLoadCount}
+                hidePreloader={hidePreloader}
+            />
+            }
         </div>
     );
 }
