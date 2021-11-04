@@ -31,7 +31,7 @@ function App() {
     const {line, direction} = useScrollControl(appRef, !hasPreloader);
 
     return (
-        <div className="app" ref={appRef}>
+        <div className="app" ref={appRef} style={hasPreloader ? {overflow: 'hidden'} : {}}>
             <appContext.Provider value={{hasPreloader, line, direction}}>
                 {hasContent &&
                 <>
