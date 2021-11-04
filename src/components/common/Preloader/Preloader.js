@@ -38,7 +38,7 @@ function Preloader({mountContent, hasAllLoad, hidePreloader}) {
 
     const getCapInline = index => ({
         left: `${index * (100 / CAP_COUNT)}%`,
-        width: `${100 / CAP_COUNT}%`,
+        width: `calc(${100 / CAP_COUNT}% + 1px)`,
         animationDelay: `${200 * (index + 3)}ms`
     });
 
