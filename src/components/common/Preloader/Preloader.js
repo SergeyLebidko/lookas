@@ -14,39 +14,27 @@ const CAP_COUNT = 10;
 const JUMP_MIN_LIMIT = 3;
 
 function Preloader({mountContent, hasAllLoad, hidePreloader}) {
-    const [capAnimation, setCapAnimation] = useState(CAP_RISE_MODE);
-    const capAnimationCount = useRef(0);
+    const [mode, setMode] = useState(CAP_RISE_MODE);
 
-    const [pulsarAnimation, setPulsarAnimation] = useState(PULSAR_RISE_MODE);
+    const capAnimationCount = useRef(0);
     const pulsarJumpCount = useRef(0);
+
+    const capClasses = classNames(
+        'preloader__cap_element',
+        {
+            'preloader__raised_cap_element': mode === CAP_RISE_MODE,
+            'preloader__removed_cap_element': mode === CAP_REMOVE_MODE
+        }
+    );
 
     const pulsarClasses = classNames(
         'preloader__pulsar',
         {
-            'preloader__rised_pulsar': pulsarAnimation === PULSAR_RISE_MODE,
-            'preloader__jumped_pulsar': pulsarAnimation === PULSAR_JUMP_MODE,
-            'preloader__removed_pulsar': pulsarAnimation === PULSAR_REMOVE_MODE
+            'preloader__rised_pulsar': mode === PULSAR_RISE_MODE,
+            'preloader__jumped_pulsar': mode === PULSAR_JUMP_MODE,
+            'preloader__removed_pulsar': mode === PULSAR_REMOVE_MODE
         }
     );
-
-    const pulsarAnimationEndHandler = () => {
-        if (pulsarAnimation === PULSAR_RISE_MODE) setPulsarAnimation(PULSAR_JUMP_MODE);
-        if (pulsarAnimation === PULSAR_REMOVE_MODE) setCapAnimation(CAP_REMOVE_MODE);
-    }
-
-    const pulsarAnimationIterationHandler = () => {
-        if (hasAllLoad && pulsarJumpCount.current > JUMP_MIN_LIMIT) {
-            setPulsarAnimation(PULSAR_REMOVE_MODE);
-            return;
-        }
-        pulsarJumpCount.current++;
-    }
-
-    const capAnimationEndHandler = () => {
-        capAnimationCount.current += 1;
-        if (capAnimationCount.current === CAP_COUNT) mountContent();
-        if (capAnimationCount.current === (CAP_COUNT * 2)) hidePreloader();
-    }
 
     const getCapInline = index => ({
         left: `${index * (100 / CAP_COUNT)}%`,
@@ -54,13 +42,39 @@ function Preloader({mountContent, hasAllLoad, hidePreloader}) {
         animationDelay: `${200 * (index + 3)}ms`
     });
 
-    const capClasses = classNames(
-        'preloader__cap_element',
-        {
-            'preloader__raised_cap_element': capAnimation === CAP_RISE_MODE,
-            'preloader__removed_cap_element': capAnimation === CAP_REMOVE_MODE
+    const hasPulsar = () => mode === PULSAR_RISE_MODE || mode === PULSAR_JUMP_MODE || mode === PULSAR_REMOVE_MODE;
+
+    const modeSwitcher = () => {
+        if (mode === CAP_RISE_MODE) {
+            capAnimationCount.current += 1;
+            if (capAnimationCount.current === CAP_COUNT) {
+                setMode(PULSAR_RISE_MODE);
+                mountContent();
+                return;
+            }
         }
-    );
+
+        if (mode === PULSAR_RISE_MODE) {
+            setMode(PULSAR_JUMP_MODE);
+            return;
+        }
+
+        if (mode === PULSAR_JUMP_MODE) {
+            pulsarJumpCount.current += 1;
+            if (pulsarJumpCount.current >= JUMP_MIN_LIMIT && hasAllLoad) setMode(PULSAR_REMOVE_MODE);
+            return;
+        }
+
+        if (mode === PULSAR_REMOVE_MODE) {
+            setMode(CAP_REMOVE_MODE);
+            return;
+        }
+
+        if (mode === CAP_REMOVE_MODE) {
+            capAnimationCount.current += 1;
+            if (capAnimationCount.current === (CAP_COUNT * 2)) hidePreloader();
+        }
+    }
 
     return (
         <div className="preloader">
@@ -70,14 +84,14 @@ function Preloader({mountContent, hasAllLoad, hidePreloader}) {
                         key={index}
                         className={capClasses}
                         style={getCapInline(index)}
-                        onAnimationEnd={capAnimationEndHandler}
+                        onAnimationEnd={modeSwitcher}
                     />
             )}
-            {capAnimationCount.current >= CAP_COUNT &&
+            {hasPulsar() &&
             <div
                 className={pulsarClasses}
-                onAnimationIteration={pulsarAnimationIterationHandler}
-                onAnimationEnd={pulsarAnimationEndHandler}
+                onAnimationIteration={modeSwitcher}
+                onAnimationEnd={modeSwitcher}
             />
             }
         </div>
