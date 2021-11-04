@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/lookas/static/css/main.7daa035f.chunk.css",
-    "main.js": "/lookas/static/js/main.5caa6b16.chunk.js",
-    "main.js.map": "/lookas/static/js/main.5caa6b16.chunk.js.map",
+    "main.css": "/lookas/static/css/main.27995cce.chunk.css",
+    "main.js": "/lookas/static/js/main.6872764f.chunk.js",
+    "main.js.map": "/lookas/static/js/main.6872764f.chunk.js.map",
     "runtime-main.js": "/lookas/static/js/runtime-main.5664c300.js",
     "runtime-main.js.map": "/lookas/static/js/runtime-main.5664c300.js.map",
-    "static/js/2.bff9bb00.chunk.js": "/lookas/static/js/2.bff9bb00.chunk.js",
-    "static/js/2.bff9bb00.chunk.js.map": "/lookas/static/js/2.bff9bb00.chunk.js.map",
+    "static/js/2.30240266.chunk.js": "/lookas/static/js/2.30240266.chunk.js",
+    "static/js/2.30240266.chunk.js.map": "/lookas/static/js/2.30240266.chunk.js.map",
     "index.html": "/lookas/index.html",
-    "static/css/main.7daa035f.chunk.css.map": "/lookas/static/css/main.7daa035f.chunk.css.map",
-    "static/js/2.bff9bb00.chunk.js.LICENSE.txt": "/lookas/static/js/2.bff9bb00.chunk.js.LICENSE.txt"
+    "static/css/main.27995cce.chunk.css.map": "/lookas/static/css/main.27995cce.chunk.css.map",
+    "static/js/2.30240266.chunk.js.LICENSE.txt": "/lookas/static/js/2.30240266.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.5664c300.js",
-    "static/js/2.bff9bb00.chunk.js",
-    "static/css/main.7daa035f.chunk.css",
-    "static/js/main.5caa6b16.chunk.js"
+    "static/js/2.30240266.chunk.js",
+    "static/css/main.27995cce.chunk.css",
+    "static/js/main.6872764f.chunk.js"
   ]
 }
