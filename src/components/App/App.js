@@ -28,7 +28,7 @@ function App() {
         for (let i = 0; i < IMG_COUNT; i++) setTimeout(() => imgLoadHandler(), i * 200);
     }, []);
 
-    const {line, direction} = useScrollControl(appRef);
+    const {line, direction} = useScrollControl(appRef, !hasPreloader);
 
     return (
         <div className="app" ref={appRef}>

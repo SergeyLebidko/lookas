@@ -10,7 +10,7 @@ import {
 } from "../constants/settings";
 import {getDirection} from "./utils";
 
-export function useScrollControl(elementRef) {
+export function useScrollControl(elementRef, scrollEnabled) {
     const [scrollControlData, setScrollControlData] = useState(
         {
             line: 0,
@@ -22,6 +22,8 @@ export function useScrollControl(elementRef) {
         if (!elementRef.current) return;
 
         function wheelHandler(event) {
+            if (!scrollEnabled) return;
+
             // Для вертикальной ориентации экрана управлять скроллингом из js не нужно
             const {innerWidth} = window;
             if (innerWidth <= V_DIRECTION_LIMIT) return;
@@ -68,7 +70,7 @@ export function useScrollControl(elementRef) {
             elementRef.current.removeEventListener('scroll', scrollHandler);
             window.removeEventListener('resize', resizeHandler);
         }
-    }, []);
+    }, [scrollEnabled]);
 
     return scrollControlData;
 }
