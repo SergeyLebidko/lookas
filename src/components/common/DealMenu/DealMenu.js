@@ -1,19 +1,65 @@
-import React from "react";
+import React, {useState} from "react";
+import classNames from "classnames";
+import DealCard from "../DealCard/DealCard";
+import design from "../../../content/images/design.jpg";
+import decor from "../../../content/images/decor.jpg";
+import restoration from "../../../content/images/restoration.jpg";
 import "./DealMenu.scss";
 
+const MENU_DATA = [
+    {
+        id: 'des',
+        title: 'Дизайн',
+        imgSource: design
+    },
+    {
+        id: 'dec',
+        title: 'Декор',
+        imgSource: decor
+    },
+    {
+        id: 'res',
+        title: 'Реставрация',
+        imgSource: restoration
+    }
+]
+
 function DealMenu() {
+    const [selected, setSelected] = useState(null);
+
+    const getItemClasses = id => classNames('deal_menu__item', {'deal_menu_selected_item': id === selected});
+
+    const selectHandler = id => {
+        if (id === selected) {
+            setSelected(null);
+            return;
+        }
+        setSelected(id);
+    }
+
     return (
-        <ul className="deal_menu">
-            <li className="deal_menu__item">
-                Дизайн
-            </li>
-            <li className="deal_menu__item">
-                Декор
-            </li>
-            <li className="deal_menu__item">
-                Реставрация
-            </li>
-        </ul>
+        <>
+            {MENU_DATA.map(
+                ({id, imgSource}) =>
+                    <DealCard
+                        key={id}
+                        imgSource={imgSource}
+                        hasSelect={selected === id}
+                    />
+            )}
+            <ul className="deal_menu">
+                {MENU_DATA.map(
+                    ({id, title}) =>
+                        <li
+                            key={id}
+                            className={getItemClasses(id)}
+                            onClick={() => selectHandler(id)}
+                        >
+                            {title}
+                        </li>
+                )}
+            </ul>
+        </>
     );
 }
 

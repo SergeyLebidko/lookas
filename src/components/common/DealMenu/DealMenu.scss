@@ -4,7 +4,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 2em;
+  height: 3em;
   width: 100%;
 
   display: flex;
@@ -21,19 +21,25 @@
     text-transform: uppercase;
     font-family: Roboto, 'sans-serif';
     font-size: 0.8em;
+    color: $gray-light;
     letter-spacing: 2px;
+    transition: all 500ms;
     cursor: pointer;
   }
 
   &__item + &__item {
     margin: 0 0 0 2em;
   }
+
+  &_selected_item {
+    color: $black
+  }
 }
 
 @media (min-width: $small-end) {
   .deal_menu {
     height: 100%;
-    width: 2em;
+    width: 3em;
 
     flex-direction: column;
 

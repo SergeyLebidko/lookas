@@ -1,4 +1,4 @@
-export const IMG_COUNT = 1;
+export const IMG_COUNT = 4;
 
 // Граница изменения направления
 export const V_DIRECTION_LIMIT = 1023;

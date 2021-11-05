@@ -34,9 +34,13 @@ function App() {
                     <Main/>
                     <Separator title="01" lineType={FULL_LINE}/>
                     <About/>
+                    <Separator title="02" lineType={FULL_LINE}/>
                     <Materials/>
+                    <Separator title="03" lineType={FULL_LINE}/>
                     <Command/>
+                    <Separator title="04" lineType={FULL_LINE}/>
                     <Learn/>
+                    <Separator title="05" lineType={FULL_LINE}/>
                     <Contacts/>
                 </>
                 }
