@@ -1,5 +1,4 @@
-// TODO. Тестовое значение. В дальнейшем должно быть откорректировано
-export const IMG_COUNT = 10;
+export const IMG_COUNT = 1;
 
 // Граница изменения направления
 export const V_DIRECTION_LIMIT = 1023;
