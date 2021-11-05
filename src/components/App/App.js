@@ -6,6 +6,7 @@ import Materials from "../pages/Materials/Materials";
 import Command from "../pages/Command/Command";
 import Learn from "../pages/Learn/Learn";
 import Contacts from "../pages/Contacts/Contacts";
+import Separator, {FULL_LINE} from "../common/Separator/Separator";
 import {appContext} from "../../utils/context";
 import {IMG_COUNT} from "../../constants/settings";
 import {useScrollControl} from "../../utils/hooks";
@@ -36,6 +37,7 @@ function App() {
                 {hasContent &&
                 <>
                     <Main/>
+                    <Separator title="01" lineType={FULL_LINE}/>
                     <About/>
                     <Materials/>
                     <Command/>

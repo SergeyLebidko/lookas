@@ -13,9 +13,16 @@
   align-items: center;
 
   &__line {
-    width: 90%;
     height: 1px;
     background-color: $gray;
+
+    &_full_line {
+      width: 100%;
+    }
+
+    &_short_line {
+      width: 85%;
+    }
   }
 
   &__title {
@@ -24,15 +31,16 @@
     left: 50%;
     width: 2em;
     height: 2em;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) rotate(0);
+
+    font-family: Roboto, 'sans-serif';
+    color: $black;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
     background-color: $white;
-    font-weight: bold;
-    color: $black;
 
     border-radius: 50%;
     border: 1px solid $gray;
@@ -44,9 +52,20 @@
     width: 1px;
     height: 100%;
 
+    &__title {
+      transform: translate(-50%, -50%) rotate(-90deg);
+    }
+
     &__line {
       width: 1px;
-      height: 90%;
+
+      &_full_line {
+        height: 100%;
+      }
+
+      &_short_line {
+        height: 85%;
+      }
     }
   }
 }

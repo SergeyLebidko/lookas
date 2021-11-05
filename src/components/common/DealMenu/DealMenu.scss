@@ -1,0 +1,58 @@
+@import "../../../style/presets";
+
+.deal_menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2em;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: $soft-white;
+  border-bottom: 1px solid $white-separator;
+  border-right: none;
+
+  transition: all 200ms;
+
+  &__item {
+    text-transform: uppercase;
+    font-family: Roboto, 'sans-serif';
+    font-size: 0.8em;
+    letter-spacing: 2px;
+    cursor: pointer;
+  }
+
+  &__item + &__item {
+    margin: 0 0 0 2em;
+  }
+}
+
+@media (min-width: $small-end) {
+  .deal_menu {
+    height: 100%;
+    width: 2em;
+
+    flex-direction: column;
+
+    border-bottom: none;
+    border-right: 1px solid $white-separator;
+
+    &__item {
+      writing-mode: tb-rl;
+      transform: rotate(180deg);
+      font-size: 1em;
+      letter-spacing: 4px;
+    }
+
+    &__item + &__item {
+      margin: 3em 0 0 0;
+    }
+  }
+}
+
+@media (min-width: $medium-start) {
+
+}
