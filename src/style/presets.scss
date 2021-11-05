@@ -1,5 +1,6 @@
 // Пресеты цветов
 $black: rgb(50, 50, 50);
+$white: rgb(255, 255, 255);
 
 // Граница изменения направления слайдов
 $v-direction-limit: 1023px;
@@ -16,6 +17,8 @@ $h-direction-limit: 1024px;
   padding: 2em;
 
   flex-shrink: 0;
+
+  background-color: $white;
 
   display: flex;
   flex-direction: column;
