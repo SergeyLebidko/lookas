@@ -8,9 +8,8 @@ import Learn from "../pages/Learn/Learn";
 import Contacts from "../pages/Contacts/Contacts";
 import {appContext} from "../../utils/context";
 import {IMG_COUNT} from "../../constants/settings";
-import "./App.scss";
 import {useScrollControl} from "../../utils/hooks";
-import Separator from "../common/Separator/Separator";
+import "./App.scss";
 
 function App() {
     const appRef = useRef(null);
@@ -37,15 +36,10 @@ function App() {
                 {hasContent &&
                 <>
                     <Main/>
-                    <Separator title="1"/>
                     <About/>
-                    <Separator title="2"/>
                     <Materials/>
-                    <Separator title="3"/>
                     <Command/>
-                    <Separator title="4"/>
                     <Learn/>
-                    <Separator title="5"/>
                     <Contacts/>
                 </>
                 }

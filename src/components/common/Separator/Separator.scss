@@ -15,7 +15,7 @@
   &__line {
     width: 90%;
     height: 1px;
-    background-color: $separator;
+    background-color: $gray;
   }
 
   &__title {
@@ -35,7 +35,7 @@
     color: $black;
 
     border-radius: 50%;
-    border: 1px solid $separator;
+    border: 1px solid $gray;
   }
 }
 

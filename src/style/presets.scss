@@ -1,12 +1,17 @@
 // Пресеты цветов
 $black: rgb(50, 50, 50);
 $white: rgb(255, 255, 255);
-
-$separator: rgb(120, 120, 120);
+$gray: rgb(120, 120, 120);
 
 // Граница изменения направления слайдов
 $v-direction-limit: 1023px;
 $h-direction-limit: 1024px;
+
+// Пресеты ширины экрана
+$small-end: 768px;
+$medium-start: 769px;
+$medium-end: 1023px;
+$large-start: 1024px;
 
 // TODO Временный тестовый миксин
 @mixin temp {
@@ -16,27 +21,8 @@ $h-direction-limit: 1024px;
   height: 100vh;
   min-height: 640px;
 
-  padding: 2em;
-
   flex-shrink: 0;
 
   background-color: $white;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  h1 {
-    font-family: Roboto, 'sans-serif';
-    font-size: 2em;
-    text-align: center;
-  }
-
-  p {
-    font-family: Roboto, 'sans-serif';
-    font-size: 1.2em;
-    text-align: center;
-  }
 }
 
