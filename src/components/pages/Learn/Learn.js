@@ -3,7 +3,7 @@ import "./Learn.scss";
 
 function Learn() {
     return (
-        <section className="learn bordered">
+        <section className="learn">
             <h1>Я постоянно прокачиваю свои навыки</h1>
             <p>Участвую в семинарах, конференциях, мастер-классах. Учусь сама и учу других.</p>
         </section>

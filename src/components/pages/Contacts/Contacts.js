@@ -3,7 +3,7 @@ import "./Contacts.scss";
 
 function Contacts() {
     return (
-        <section className="contacts bordered">
+        <section className="contacts">
             <h1>Связаться со мной можно тут</h1>
             <p>...здесь будет список ссылок на vk, instagram, telegram, whatsapp, email...</p>
         </section>

@@ -2,6 +2,8 @@
 $black: rgb(50, 50, 50);
 $white: rgb(255, 255, 255);
 
+$separator: rgb(120, 120, 120);
+
 // Граница изменения направления слайдов
 $v-direction-limit: 1023px;
 $h-direction-limit: 1024px;
@@ -37,19 +39,4 @@ $h-direction-limit: 1024px;
     text-align: center;
   }
 }
-
-// TODO Временные стили для границ слайдов
-.bordered + .bordered {
-  border-top: 1px solid $black;
-  border-left: none;
-}
-
-@media (min-width: $h-direction-limit) {
-  .bordered + .bordered {
-    border-top: none;
-    border-left: 1px solid $black;
-  }
-}
-
-
 
