@@ -1,9 +1,10 @@
-import React, {useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import classNames from "classnames";
 import DealCard from "../DealCard/DealCard";
 import design from "../../../content/images/design.jpg";
 import decor from "../../../content/images/decor.jpg";
 import restoration from "../../../content/images/restoration.jpg";
+import {appContext} from "../../../utils/context";
 import "./DealMenu.scss";
 
 const MENU_DATA = [
@@ -26,6 +27,11 @@ const MENU_DATA = [
 
 function DealMenu() {
     const [selected, setSelected] = useState(null);
+    const {line} = useContext(appContext);
+
+    useEffect(() => {
+        if (line > 100) setSelected(null);
+    }, [line]);
 
     const getItemClasses = id => classNames('deal_menu__item', {'deal_menu_selected_item': id === selected});
 
