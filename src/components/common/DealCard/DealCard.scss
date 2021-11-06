@@ -25,8 +25,7 @@
   }
 
   .deal_label {
-    width: 80%;
-
+    width: 22em;
     top: 50%;
     right: 50%;
     transform: translate(50%, -50%);
@@ -44,9 +43,8 @@
 @media (min-width: $large-start) {
   .deal_card {
     .deal_label {
-      width: 22em;
-      top: 5em;
-      right: 7em;
+      top: 2em;
+      right: 5em;
       transform: translate(0);
     }
   }
