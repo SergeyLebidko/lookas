@@ -2,7 +2,7 @@ import design from "../content/images/design.jpg";
 import decor from "../content/images/decor.jpg";
 import restoration from "../content/images/restoration.jpg";
 
-export const IMG_COUNT = 4;
+export const IMG_COUNT = 5;
 
 // Граница изменения направления
 export const V_DIRECTION_LIMIT = 1023;

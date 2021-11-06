@@ -21,7 +21,7 @@ $medium-end: 1023px;
 $large-start: 1024px;
 
 // TODO Временный тестовый миксин
-@mixin temp {
+@mixin page_mixin {
   width: 100vw;
   min-width: 320px;
 

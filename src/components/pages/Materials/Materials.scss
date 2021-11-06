@@ -1,5 +1,5 @@
 @import "../../../style/presets";
 
 .materials {
-  @include temp;
+  @include page_mixin;
 }

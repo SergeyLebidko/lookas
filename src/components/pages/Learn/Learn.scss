@@ -1,5 +1,5 @@
 @import "../../../style/presets";
 
 .learn {
-  @include temp;
+  @include page_mixin;
 }

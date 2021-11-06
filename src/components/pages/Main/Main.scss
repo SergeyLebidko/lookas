@@ -35,7 +35,7 @@
 }
 
 .main {
-  @include temp;
+  @include page_mixin;
 
   position: relative;
 

@@ -1,5 +1,5 @@
 @import "../../../style/presets";
 
 .command {
-  @include temp;
+  @include page_mixin;
 }
