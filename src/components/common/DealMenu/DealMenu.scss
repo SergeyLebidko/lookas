@@ -25,6 +25,7 @@
     letter-spacing: 2px;
     transition: all 500ms;
     cursor: pointer;
+    user-select: none;
   }
 
   &__item + &__item {
