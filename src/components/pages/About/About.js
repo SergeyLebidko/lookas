@@ -25,7 +25,8 @@ function About() {
                 <h1 className="about__big_title">Всем привет, я Tanya Lookas!</h1>
                 <h2 className="about__small_title">Я декоратор-реставратор с десятилетним опытом работы.</h2>
                 <h2 className="about__small_title">Руковожу студией декора &quot;Белый лён&quot;</h2>
-                <a className="about__wl_anchor" href="https://vk.com/whitelinen_snk">White linen</a>
+                <a className="about__wl_anchor" href="https://vk.com/whitelinen_snk">VK</a>
+                <a className="about__wl_anchor" href="https://www.instagram.com/tanya_lookas/">Instagram</a>
             </div>
         </section>
     );
