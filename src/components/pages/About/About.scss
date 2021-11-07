@@ -28,19 +28,35 @@
 
 .about {
   @include page_mixin;
+  width: 100vw;
   height: initial;
 
-  .avatar {
+  display: flex;
+  flex-direction: column;
 
-  }
+  padding: 2em;
+
+  transition: all 300ms;
 
   .about_myself {
+    margin: 25vw 0 0 0;
+  }
+}
 
+@media (min-width: $medium-start) and (max-width: $medium-end) {
+  .about {
+    padding: 3em;
   }
 }
 
 @media (min-width: $large-start) {
   .about {
+    width: initial;
+    height: 100vh;
+    flex-direction: row;
 
+    .about_myself {
+      margin: 0 0 0 10vw;
+    }
   }
 }
