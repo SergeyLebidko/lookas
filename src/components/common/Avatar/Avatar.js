@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useRef, useState} from "react";
+import React, {useContext, useRef, useState} from "react";
 import classNames from "classnames";
 import avatar from "../../../content/images/avatar.jpg";
 import wl from "../../../content/images/wl.jpg";
@@ -6,17 +6,18 @@ import {appContext} from "../../../utils/context";
 import {H_DIRECTION, V_DIRECTION} from "../../../constants/settings";
 import {getDistancePercent} from "../../../utils/utils";
 import "./Avatar.scss";
+import {useVisibleControl} from "../../../utils/hooks";
 
 const HALF_INTERVAL = 7;
 
 function Avatar() {
     const [hasVisible, setHasVisible] = useState(false);
     const {line, direction, imgLoadHandler} = useContext(appContext);
+
+    const avatarRef = useRef(null);
     const logoRef = useRef(null);
 
-    useEffect(() => {
-        if (line > 400) setHasVisible(true);
-    }, [line]);
+    useVisibleControl(avatarRef, line, direction, 1/4, setHasVisible, hasVisible);
 
     const avatarClasses = classNames('avatar__photo', {'avatar__photo_rised': hasVisible});
     const logoClasses = classNames('avatar__logo', {'avatar__logo_rised': hasVisible});
@@ -43,7 +44,7 @@ function Avatar() {
 
     return (
         <div className="avatar">
-            <img className={avatarClasses} src={avatar} onLoad={imgLoadHandler}/>
+            <img className={avatarClasses} src={avatar} ref={avatarRef} onLoad={imgLoadHandler}/>
             <img className={logoClasses} style={getLogoInline()} src={wl} ref={logoRef} onLoad={imgLoadHandler}/>
         </div>
     );

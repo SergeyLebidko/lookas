@@ -4,7 +4,7 @@ import {
     H_DIRECTION_LIMIT,
     SCROLL_STEPS_LIMIT,
     SCROLL_TIMING,
-    SCROLL_DELTA
+    SCROLL_DELTA, H_DIRECTION, V_DIRECTION
 } from "../constants/settings";
 import {getDirection} from "./utils";
 
@@ -67,4 +67,24 @@ export function useScrollControl(elementRef, scrollEnabled) {
     }, [scrollEnabled]);
 
     return scrollControlData;
+}
+
+export function useVisibleControl(elementRef, line, direction, part, setter, setterValue) {
+    useEffect(() => {
+        if (!elementRef.current || setterValue) return;
+        const {innerWidth, innerHeight} = window;
+        const {x, y, width, height} = elementRef.current.getBoundingClientRect();
+
+        if (direction === H_DIRECTION) {
+            if ((innerWidth - x) < 0) return;
+            const scrolled = (innerWidth - x) / width;
+            if (scrolled > part) setter(true);
+        }
+
+        if (direction === V_DIRECTION) {
+            if ((innerHeight - y) < 0) return;
+            const scrolled = (innerHeight - y) / height;
+            if (scrolled > part) setter(true);
+        }
+    }, [line, direction]);
 }
