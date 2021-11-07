@@ -52,6 +52,7 @@
     border: 1px solid $separator;
 
     font-family: Roboto, 'sans-serif';
+    line-height: calc(1em + 8px);
 
     transition: all 300ms;
   }
