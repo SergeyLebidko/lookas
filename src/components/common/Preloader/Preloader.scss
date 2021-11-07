@@ -93,6 +93,7 @@ $slow-fast-bezier: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 
 .preloader {
+  z-index: 5;
   position: absolute;
   top: 0;
   left: 0;

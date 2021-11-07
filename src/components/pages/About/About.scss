@@ -1,4 +1,6 @@
 @import "../../../style/presets";
+@import "../../common/AboutMyself/AboutMyself";
+@import "../../common/Avatar/Avatar";
 
 @keyframes v_avatar_rise {
   from {
@@ -26,155 +28,19 @@
 
 .about {
   @include page_mixin;
-  width: 100vw;
   height: initial;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  .avatar {
 
-  overflow: hidden;
-
-  &__image_block {
-    opacity: 0;
-    position: relative;
-    margin: 2em;
   }
 
-  &__avatar {
-    width: 100%;
-    height: initial;
-    object-fit: cover;
-    transition: all 300ms;
-  }
+  .about_myself {
 
-  &__image_block_rised {
-    animation-name: v_avatar_rise;
-    animation-duration: 1500ms;
-    animation-fill-mode: both;
-  }
-
-  &__wl {
-    width: 8em;
-    height: 8em;
-    border-radius: 50%;
-    border: 1px solid $black;
-
-    position: absolute;
-    top: 100%;
-    right: 50%;
-    transform: translate(50%, -50%);
-
-    transition: all 300ms;
-  }
-
-  &__title_block {
-    padding: 6em 2em 4em 2em;
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-  }
-
-  &__big_title, &__small_title {
-    text-align: right;
-    font-weight: 300;
-    transition: all 300ms;
-  }
-
-  &__big_title {
-    font-size: 1.2em;
-  }
-
-  &__small_title {
-    font-size: 1em;
-    margin: 0.5em 0 0 0;
-  }
-
-  &__wl_anchor {
-    text-transform: uppercase;
-    text-decoration: none;
-    letter-spacing: 2px;
-    font-size: 0.9em;
-    margin: 6em 0 0 0;
-    padding: 8px 20px;
-    border: 1px solid $black;
-    border-radius: 20px;
-    background-color: $white;
-    color: $black;
-    transition: all 300ms;
-
-    &:hover {
-      background-color: $black;
-      color: $white;
-    }
-  }
-}
-
-@media (min-width: $medium-start) and (max-width: $medium-end) {
-  .about {
-    &__wl {
-      width: 15em;
-      height: 15em;
-    }
-
-    &__title_block {
-      padding: 10em 2em 4em 2em;
-    }
-
-    &__big_title {
-      font-size: 1.5em;
-    }
-
-    &__small_title {
-      font-size: 1.2em;
-      margin: 0.5em 0 0 0;
-    }
   }
 }
 
 @media (min-width: $large-start) {
   .about {
-    flex-direction: row;
-    justify-content: space-between;
 
-    width: initial;
-    height: 100vh;
-
-    &__wl {
-      width: 20em;
-      height: 20em;
-      top: 50%;
-      right: 0;
-    }
-
-    &__title_block {
-      padding: 2em 2em 4em 2em;
-    }
-
-    &__avatar {
-      width: initial;
-      height: 100%;
-    }
-
-    &__image_block_rised {
-      animation-name: h_avatar_rise;
-      animation-duration: 1500ms;
-      animation-fill-mode: both;
-    }
-
-    &__big_title {
-      font-size: 2.5em;
-    }
-
-    &__small_title {
-      font-size: 1.8em;
-      margin: 6px 0 0 0;
-    }
-
-    &__wl_anchor {
-      margin-top: auto;
-      font-size: 1em;
-    }
   }
 }

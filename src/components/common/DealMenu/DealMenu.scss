@@ -14,7 +14,7 @@
   align-items: center;
 
   background-color: $soft-white;
-  border-bottom: 1px solid $white-separator;
+  border-bottom: 1px solid $separator;
   border-right: none;
 
   transition: all 200ms;
@@ -47,7 +47,7 @@
     flex-direction: column;
 
     border-bottom: none;
-    border-right: 1px solid $white-separator;
+    border-right: 1px solid $separator;
 
     &__item {
       writing-mode: tb-rl;

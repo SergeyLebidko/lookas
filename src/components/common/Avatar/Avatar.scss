@@ -1,0 +1,18 @@
+@import "../../../style/presets";
+
+.avatar {
+
+  &__photo {
+
+  }
+
+  &__logo {
+
+  }
+}
+
+@media (min-width: $large-start) {
+  .avatar {
+
+  }
+}
