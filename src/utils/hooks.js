@@ -2,8 +2,6 @@ import {useEffect, useState} from "react";
 import {
     V_DIRECTION_LIMIT,
     H_DIRECTION_LIMIT,
-    V_DIRECTION,
-    H_DIRECTION,
     SCROLL_STEPS_LIMIT,
     SCROLL_TIMING,
     SCROLL_DELTA
@@ -69,20 +67,4 @@ export function useScrollControl(elementRef, scrollEnabled) {
     }, [scrollEnabled]);
 
     return scrollControlData;
-}
-
-// TODO Тестовый хук определения видимости элемента (раздела) сайта
-export function useElementVisible(elementRef, elementName, line, direction) {
-    useEffect(() => {
-        if (!elementRef.current) return;
-        const {innerWidth, innerHeight} = window;
-        const {x, y, width, height} = elementRef.current.getBoundingClientRect();
-
-        if (direction === V_DIRECTION) {
-            console.log(y < innerHeight && (y + height) > 0 ? `${elementName} виден` : `${elementName} не виден`);
-        }
-        if (direction === H_DIRECTION) {
-            console.log(x < innerWidth && (x + width) > 0 ? `${elementName} виден` : `${elementName} не виден`);
-        }
-    }, [line, direction]);
 }
