@@ -8,7 +8,7 @@ import {getDistancePercent} from "../../../utils/utils";
 import "./Avatar.scss";
 import {useVisibleControl} from "../../../utils/hooks";
 
-const HALF_INTERVAL = 7;
+const HALF_INTERVAL = 5;
 
 function Avatar() {
     const [hasVisible, setHasVisible] = useState(false);
