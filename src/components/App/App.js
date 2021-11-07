@@ -5,7 +5,7 @@ import About from "../pages/About/About";
 import Materials from "../pages/Materials/Materials";
 import Command from "../pages/Command/Command";
 import Learn from "../pages/Learn/Learn";
-import Separator, {SHORT_LINE} from "../common/Separator/Separator";
+import Separator from "../common/Separator/Separator";
 import {appContext} from "../../utils/context";
 import {IMG_COUNT} from "../../constants/settings";
 import {useScrollControl} from "../../utils/hooks";
@@ -31,13 +31,13 @@ function App() {
                 {hasContent &&
                 <>
                     <Main/>
-                    <Separator title="01" lineType={SHORT_LINE}/>
+                    <Separator title="A"/>
                     <About/>
-                    <Separator title="02" lineType={SHORT_LINE}/>
+                    <Separator title="B"/>
                     <Materials/>
-                    <Separator title="03" lineType={SHORT_LINE}/>
+                    <Separator title="C"/>
                     <Command/>
-                    <Separator title="04" lineType={SHORT_LINE}/>
+                    <Separator title="D"/>
                     <Learn/>
                 </>
                 }

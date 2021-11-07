@@ -14,15 +14,8 @@
 
   &__line {
     height: 1px;
+    width: 75%;
     background-color: $gray-high-light;
-
-    &_full_line {
-      width: 100%;
-    }
-
-    &_short_line {
-      width: 75%;
-    }
   }
 
   &__title {
@@ -31,7 +24,7 @@
     left: 50%;
     width: 2em;
     height: 2em;
-    transform: translate(-50%, -50%) rotate(0);
+    transform: translate(-50%, -50%);
 
     font-family: Roboto, 'sans-serif';
     color: $black;
@@ -52,20 +45,9 @@
     width: 1px;
     height: 100%;
 
-    &__title {
-      transform: translate(-50%, -50%) rotate(-90deg);
-    }
-
     &__line {
       width: 1px;
-
-      &_full_line {
-        height: 100%;
-      }
-
-      &_short_line {
-        height: 75%;
-      }
+      height: 75%;
     }
   }
 }
