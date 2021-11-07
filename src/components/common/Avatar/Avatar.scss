@@ -1,13 +1,39 @@
 @import "../../../style/presets";
 
+@keyframes h_rise {
+  from {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  }
+
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes v_rise {
+  from {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
 .avatar {
   position: relative;
-  border-right: 1px solid $black;
 
   &__photo {
     width: 100%;
-    height: initial;
+    height: 100%;
     object-fit: contain;
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+  }
+
+  &__photo_rised {
+    animation-name: v_rise;
+    animation-duration: 1500ms;
+    animation-fill-mode: both;
   }
 
   &__logo {
@@ -18,10 +44,18 @@
     width: 30%;
     height: 30%;
 
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+
     border-radius: 50%;
     border: 1px solid $black;
 
     transition: all 300ms;
+  }
+
+  &__logo_rised {
+    animation-name: v_rise;
+    animation-duration: 1500ms;
+    animation-fill-mode: both;
   }
 }
 
@@ -34,6 +68,10 @@
       object-fit: contain;
     }
 
+    &__photo_rised {
+      animation-name: h_rise;
+    }
+
     &__logo {
       position: absolute;
       top: 50%;
@@ -44,6 +82,10 @@
 
       border-radius: 50%;
       border: 1px solid $black;
+    }
+
+    &__logo_rised {
+      animation-name: h_rise;
     }
   }
 }

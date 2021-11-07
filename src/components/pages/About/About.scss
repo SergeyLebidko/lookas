@@ -1,30 +1,5 @@
 @import "../../../style/presets";
 @import "../../common/AboutMyself/AboutMyself";
-@import "../../common/Avatar/Avatar";
-
-@keyframes v_avatar_rise {
-  from {
-    top: 50px;
-    opacity: 0;
-  }
-
-  to {
-    top: 0;
-    opacity: 1;
-  }
-}
-
-@keyframes h_avatar_rise {
-  from {
-    left: 50px;
-    opacity: 0;
-  }
-
-  to {
-    left: 0;
-    opacity: 1;
-  }
-}
 
 .about {
   @include page_mixin;
