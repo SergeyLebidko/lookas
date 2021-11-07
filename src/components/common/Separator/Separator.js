@@ -11,7 +11,7 @@ function Separator({title, lineType}) {
         'separator__line',
         {
             'separator__line_full_line': lineType === FULL_LINE,
-            'separator__short_full_line': lineType === SHORT_LINE
+            'separator__line_short_line': lineType === SHORT_LINE
         }
     );
 

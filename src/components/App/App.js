@@ -5,8 +5,7 @@ import About from "../pages/About/About";
 import Materials from "../pages/Materials/Materials";
 import Command from "../pages/Command/Command";
 import Learn from "../pages/Learn/Learn";
-import Contacts from "../pages/Contacts/Contacts";
-import Separator, {FULL_LINE} from "../common/Separator/Separator";
+import Separator, {SHORT_LINE} from "../common/Separator/Separator";
 import {appContext} from "../../utils/context";
 import {IMG_COUNT} from "../../constants/settings";
 import {useScrollControl} from "../../utils/hooks";
@@ -32,16 +31,14 @@ function App() {
                 {hasContent &&
                 <>
                     <Main/>
-                    <Separator title="01" lineType={FULL_LINE}/>
+                    <Separator title="01" lineType={SHORT_LINE}/>
                     <About/>
-                    <Separator title="02" lineType={FULL_LINE}/>
+                    <Separator title="02" lineType={SHORT_LINE}/>
                     <Materials/>
-                    <Separator title="03" lineType={FULL_LINE}/>
+                    <Separator title="03" lineType={SHORT_LINE}/>
                     <Command/>
-                    <Separator title="04" lineType={FULL_LINE}/>
+                    <Separator title="04" lineType={SHORT_LINE}/>
                     <Learn/>
-                    <Separator title="05" lineType={FULL_LINE}/>
-                    <Contacts/>
                 </>
                 }
             </appContext.Provider>
