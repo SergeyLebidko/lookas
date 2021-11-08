@@ -2,6 +2,7 @@ import React, {useRef, useState} from "react";
 import Preloader from "../common/Preloader/Preloader";
 import Main from "../pages/Main/Main";
 import About from "../pages/About/About";
+import Place from "../pages/Place/Place";
 import Materials from "../pages/Materials/Materials";
 import Command from "../pages/Command/Command";
 import Learn from "../pages/Learn/Learn";
@@ -34,10 +35,12 @@ function App() {
                     <Separator title="A"/>
                     <About/>
                     <Separator title="B"/>
-                    <Materials/>
+                    <Place/>
                     <Separator title="C"/>
-                    <Command/>
+                    <Materials/>
                     <Separator title="D"/>
+                    <Command/>
+                    <Separator title="E"/>
                     <Learn/>
                 </>
                 }

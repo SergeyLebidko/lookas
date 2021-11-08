@@ -11,7 +11,7 @@ export const IMG_SOURCES = {
     decor,
     restoration,
     photo,
-    logo
+    logo,
 }
 
 export const IMG_COUNT = Object.keys(IMG_SOURCES).length;
