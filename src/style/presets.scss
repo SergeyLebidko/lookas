@@ -33,3 +33,16 @@ $large-start: 1024px;
 
   background-color: $white;
 }
+
+// Анимация появления текста
+@keyframes text_rise {
+  from {
+    top: -20px;
+    opacity: 0;
+  }
+
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
