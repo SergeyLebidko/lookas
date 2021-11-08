@@ -6,20 +6,22 @@ import {getDistancePercent} from "../../../utils/utils";
 import {useVisibleControl} from "../../../utils/hooks";
 import "./Avatar.scss";
 
-
 const HALF_INTERVAL = 5;
 
 function Avatar() {
-    const [hasVisible, setHasVisible] = useState(false);
+    const [hasPhotoVisible, setHasPhotoVisible] = useState(false);
+    const [hasLogoVisible, setHasLogoVisible] = useState(false);
+
     const {line, direction, imgLoadHandler} = useContext(appContext);
 
     const avatarRef = useRef(null);
     const logoRef = useRef(null);
 
-    useVisibleControl(avatarRef, line, direction, 1 / 4, setHasVisible, hasVisible);
+    useVisibleControl(avatarRef, line, direction, 1 / 4, setHasPhotoVisible, hasPhotoVisible);
+    useVisibleControl(logoRef, line, direction, 3 / 4, setHasLogoVisible, hasLogoVisible);
 
-    const avatarClasses = classNames('avatar__photo', {'avatar__photo_rised': hasVisible});
-    const logoClasses = classNames('avatar__logo', {'avatar__logo_rised': hasVisible});
+    const avatarClasses = classNames('avatar__photo', {'avatar__photo_rised': hasPhotoVisible});
+    const logoClasses = classNames('avatar__logo', {'avatar__logo_rised': hasLogoVisible});
 
     const getLogoInline = () => {
         const percent = getDistancePercent(logoRef, direction);

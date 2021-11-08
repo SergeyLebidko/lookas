@@ -24,6 +24,7 @@
   position: relative;
 
   &__photo {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -33,7 +34,7 @@
 
   &__photo_rised {
     animation-name: v_rise;
-    animation-duration: 1500ms;
+    animation-duration: 2000ms;
     animation-fill-mode: both;
   }
 
