@@ -1,8 +1,8 @@
 import React, {useContext} from "react";
-import back from "../../../content/images/main_back.jpg";
 import {ReactComponent as Arrow} from "../../../content/icons/arrow.svg";
 import DealMenu from "../../common/DealMenu/DealMenu";
 import {appContext} from "../../../utils/context";
+import {IMG_SOURCES} from "../../../constants/settings";
 import "./Main.scss";
 
 function Main() {
@@ -10,7 +10,7 @@ function Main() {
 
     return (
         <section className="main">
-            <img src={back} className="main__back" onLoad={imgLoadHandler}/>
+            <img src={IMG_SOURCES['back']} className="main__back" onLoad={imgLoadHandler}/>
             <h1 className="main__title">Tanya Lookas</h1>
             <Arrow className="main__arrow"/>
             <DealMenu/>
