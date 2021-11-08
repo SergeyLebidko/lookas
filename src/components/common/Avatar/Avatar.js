@@ -14,13 +14,13 @@ function Avatar() {
 
     const {line, direction, imgLoadHandler} = useContext(appContext);
 
-    const avatarRef = useRef(null);
+    const photoRef = useRef(null);
     const logoRef = useRef(null);
 
-    useVisibleControl(avatarRef, line, direction, 1 / 4, setHasPhotoVisible, hasPhotoVisible);
+    useVisibleControl(photoRef, line, direction, 1 / 4, setHasPhotoVisible, hasPhotoVisible);
     useVisibleControl(logoRef, line, direction, 3 / 4, setHasLogoVisible, hasLogoVisible);
 
-    const avatarClasses = classNames('avatar__photo', {'avatar__photo_rised': hasPhotoVisible});
+    const photoClasses = classNames('avatar__photo', {'avatar__photo_rised': hasPhotoVisible});
     const logoClasses = classNames('avatar__logo', {'avatar__logo_rised': hasLogoVisible});
 
     const getLogoInline = () => {
@@ -46,15 +46,15 @@ function Avatar() {
     return (
         <div className="avatar">
             <img
-                className={avatarClasses}
-                src={IMG_SOURCES['avatar']}
-                ref={avatarRef}
+                className={photoClasses}
+                src={IMG_SOURCES['photo']}
+                ref={photoRef}
                 onLoad={imgLoadHandler}
             />
             <img
                 className={logoClasses}
                 style={getLogoInline()}
-                src={IMG_SOURCES['wl']}
+                src={IMG_SOURCES['logo']}
                 ref={logoRef}
                 onLoad={imgLoadHandler}
             />

@@ -2,16 +2,16 @@ import back from "../content/images/main_back.jpg";
 import design from "../content/images/design.jpg";
 import decor from "../content/images/decor.jpg";
 import restoration from "../content/images/restoration.jpg";
-import avatar from "../content/images/avatar.jpg";
-import wl from "../content/images/wl.jpg";
+import photo from "../content/images/photo.jpg";
+import logo from "../content/images/logo.jpg";
 
 export const IMG_SOURCES = {
     back,
     design,
     decor,
     restoration,
-    avatar,
-    wl
+    photo,
+    logo
 }
 
 export const IMG_COUNT = Object.keys(IMG_SOURCES).length;
