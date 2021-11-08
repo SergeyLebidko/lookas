@@ -57,12 +57,12 @@ export function useScrollControl(elementRef, scrollEnabled) {
             setScrollControlData(oldData => ({...oldData, line}));
         }
 
-        elementRef.current.addEventListener('mousewheel', wheelHandler);
+        elementRef.current.addEventListener('wheel', wheelHandler);
         elementRef.current.addEventListener('scroll', scrollHandler);
         window.addEventListener('resize', resizeHandler);
 
         return () => {
-            elementRef.current.removeEventListener('mousewheel', wheelHandler);
+            elementRef.current.removeEventListener('wheel', wheelHandler);
             elementRef.current.removeEventListener('scroll', scrollHandler);
             window.removeEventListener('resize', resizeHandler);
         }
