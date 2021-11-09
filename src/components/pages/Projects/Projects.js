@@ -5,9 +5,9 @@ import "./Projects.scss";
 
 function Projects() {
     return (
-        <div className="projects">
+        <section className="projects">
             {PROJECTS.map(project => <ProjectCard key={project.title} {...project}/>)}
-        </div>
+        </section>
     );
 }
 

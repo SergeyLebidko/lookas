@@ -18,7 +18,7 @@ function Place(){
     const smallClasses = classNames('place__small_title', {'place__small_title_rise': hasSmall});
 
     return (
-        <div className="place" ref={elementRef}>
+        <section className="place" ref={elementRef}>
             <h1 className={bigClasses}>
                 Я живу в Славянске-на-Кубани
             </h1>
@@ -26,7 +26,7 @@ function Place(){
                 Но принимаю заказы и работаю также и в других городах: в Краснодаре, Новороссийске, Анапе, Темрюке,
                 Тамани, Геленджике и так далее...
             </h2>
-        </div>
+        </section>
     );
 }
 

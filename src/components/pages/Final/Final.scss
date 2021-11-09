@@ -1,0 +1,45 @@
+@import "../../../style/presets";
+
+.final {
+  @include page_mixin;
+  width: 100%;
+  height: 3em;
+  min-height: initial;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 2em;
+
+  &__title {
+    font-size: 2em;
+    transition: all 300ms;
+    letter-spacing: 4px;
+  }
+}
+
+@media (min-width: $medium-start) and (max-width: $medium-end) {
+  .final {
+    padding: 3em;
+
+    &__title {
+      font-size: 3em;
+      letter-spacing: 6px;
+    }
+  }
+}
+
+@media (min-width: $large-start) {
+  .final {
+    width: 8em;
+    min-width: initial;
+    height: 100%;
+
+    &__title {
+      writing-mode: tb-rl;
+      font-size: 5em;
+      letter-spacing: 8px;
+    }
+  }
+}
