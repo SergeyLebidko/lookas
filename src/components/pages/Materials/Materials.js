@@ -5,33 +5,15 @@ import classNames from "classnames";
 import {useVisibleControl} from "../../../utils/hooks";
 
 const MATERIALS = [
-    {
-        title: 'Картон'
-    },
-    {
-        title: 'Гипс'
-    },
-    {
-        title: 'Штукатурка'
-    },
-    {
-        title: 'Полимерная глина'
-    },
-    {
-        title: 'Акриловые краски'
-    },
-    {
-        title: 'Пенопласт'
-    },
-    {
-        title: 'Металл'
-    },
-    {
-        title: 'Дерево'
-    },
-    {
-        title: 'Ткань'
-    }
+    'Гипс',
+    'Картон',
+    'Штукатурка',
+    'Полимерная глина',
+    'Акриловые краски',
+    'Пенопласт',
+    'Металл',
+    'Дерево',
+    'Ткань'
 ]
 
 function Materials() {
@@ -49,15 +31,15 @@ function Materials() {
 
     const bigClasses = classNames('materials__big_title', {'materials__big_title_rise': hasBig});
     const smallClasses = classNames('materials__small_title', {'materials__small_title_rise': hasSmall});
-    const listClasses = classNames('materials__list', {'materials__list_rise': hasList});
+    const getItemClasses = index => 'materials__list_item ' + (hasList ? `materials__list_item_${index}_rise` : '');
 
     return (
         <section className="materials" ref={elementRef}>
             <h1 className={bigClasses}>
                 Я работаю с самыми разными материалами!
             </h1>
-            <ul className={listClasses}>
-                {MATERIALS.map(({title}) => <li key={title}>{title}</li>)}
+            <ul className="materials__list">
+                {MATERIALS.map((title, index) => <li key={title} className={getItemClasses(index)}>{title}</li>)}
             </ul>
             <h2 className={smallClasses}>
                 И это далеко не всё!...
