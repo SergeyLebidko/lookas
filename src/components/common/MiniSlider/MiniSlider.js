@@ -1,9 +1,8 @@
 import React, {useContext, useEffect, useRef, useState} from "react";
 import {IMG_SOURCES} from "../../../constants/settings";
 import {appContext} from "../../../utils/context";
+import {SLIDE_COUNT} from "../../../constants/settings";
 import "./MiniSlider.scss";
-
-const SLIDE_COUNT = 6;
 
 function MiniSlider() {
     const [slide, setSlide] = useState(0);
@@ -13,16 +12,18 @@ function MiniSlider() {
 
     const getNextSlide = slide => slide === (SLIDE_COUNT - 1) ? 0 : slide + 1;
     const toNext = () => setSlide(currentSlide => getNextSlide(currentSlide));
+    const startInterval = () => timer.current = startInterval(toNext, 5000);
+    const stopInterval = () => clearInterval(timer.current);
 
     useEffect(() => {
-        timer.current = setInterval(toNext, 5000);
-        return () => clearInterval(timer.current);
+        startInterval();
+        return stopInterval;
     }, []);
 
     const clickHandler = () => {
-        clearInterval(timer.current);
+        stopInterval();
         toNext();
-        timer.current = setInterval(toNext, 5000);
+        startInterval();
     }
 
     return (
