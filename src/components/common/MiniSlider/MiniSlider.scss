@@ -37,7 +37,7 @@
 
   &__counter {
     position: absolute;
-    top: 50%;
+    top: 0;
     left: 50%;
     width: 4em;
     height: 4em;
@@ -52,6 +52,6 @@
     align-items: center;
 
     border-radius: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 15%);
   }
 }
