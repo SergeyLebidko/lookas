@@ -33,8 +33,8 @@
     position: absolute;
     top: 50%;
     right: 2em;
-    width: 8em;
-    height: 8em;
+    width: 9em;
+    height: 9em;
     transform: translateY(-50%);
     transition: all 300ms;
   }
@@ -58,6 +58,7 @@
 
   &__list {
     margin-top: auto;
+    align-self: flex-start;
   }
 
   &__list_item {
@@ -109,8 +110,8 @@
 
     .mini_slider {
       right: 3em;
-      width: 12em;
-      height: 12em;
+      width: 14em;
+      height: 14em;
     }
 
     &__big_title {
@@ -131,8 +132,8 @@
     padding: 2em;
 
     .mini_slider {
-      width: 16em;
-      height: 16em;
+      width: 18em;
+      height: 18em;
     }
 
     &__big_title {

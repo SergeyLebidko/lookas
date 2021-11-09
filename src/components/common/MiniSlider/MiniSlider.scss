@@ -2,13 +2,54 @@
 
 .mini_slider {
   border-radius: 50%;
+  cursor: pointer;
 
   overflow: hidden;
 
-  img {
+  &:hover img {
+    filter: grayscale(1);
+  }
+
+  &:hover &__counter {
+    opacity: 1;
+  }
+
+  &__slide {
+    position: absolute;
+    top: 0;
+    left: 0;
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: all 1000ms;
+  }
+
+  &__visible_slide {
+    opacity: 1;
+  }
+
+  &__hide_slide {
+    opacity: 0;
+  }
+
+  &__counter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4em;
+    height: 4em;
+    background-color: $transparent-white;
+    border: 1px solid $black;
+
+    opacity: 0;
+    transition: all 1000ms;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
   }
 }

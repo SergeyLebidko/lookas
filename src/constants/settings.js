@@ -4,12 +4,12 @@ import decor from "../content/images/decor.jpg";
 import restoration from "../content/images/restoration.jpg";
 import photo from "../content/images/photo.jpg";
 import logo from "../content/images/logo.jpg";
+import mini_slide0 from "../content/images/mini_slide0.jpg";
 import mini_slide1 from "../content/images/mini_slide1.jpg";
 import mini_slide2 from "../content/images/mini_slide2.jpg";
 import mini_slide3 from "../content/images/mini_slide3.jpg";
 import mini_slide4 from "../content/images/mini_slide4.jpg";
 import mini_slide5 from "../content/images/mini_slide5.jpg";
-import mini_slide6 from "../content/images/mini_slide6.jpg";
 
 export const IMG_SOURCES = {
     back,
@@ -18,12 +18,12 @@ export const IMG_SOURCES = {
     restoration,
     photo,
     logo,
+    mini_slide0,
     mini_slide1,
     mini_slide2,
     mini_slide3,
     mini_slide4,
-    mini_slide5,
-    mini_slide6
+    mini_slide5
 }
 
 export const IMG_COUNT = Object.keys(IMG_SOURCES).length;
