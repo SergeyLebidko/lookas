@@ -15,6 +15,7 @@ import project1 from "../content/images/project1.jpg";
 import project2 from "../content/images/project2.jpg";
 import project3 from "../content/images/project3.jpg";
 import project4 from "../content/images/project4.jpg";
+import project5 from "../content/images/project5.jpg";
 
 export const IMG_SOURCES = {
     back,
@@ -32,7 +33,8 @@ export const IMG_SOURCES = {
     project0,
     project1,
     project2,
-    project4
+    project4,
+    project5
 
 }
 
@@ -128,5 +130,11 @@ export const PROJECTS = [
             'современными материалами приобрел совершенно другой вид! Теперь это яркая и функциональная деталь ' +
             'интерьера, которая по праву стала украшением гостиной!',
         img: project4
+    },
+    {
+        title: 'Декор места молодожёнов',
+        description: 'Оформление места молодожёнов в теплых приглушенных тонах. Деревянная стенка только усиливает ' +
+            'ощущение уюта и теплоты на скромной свадебной церемонии.',
+        img: project5
     }
 ]

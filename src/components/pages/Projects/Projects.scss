@@ -2,4 +2,12 @@
 
 .projects {
   @include page_mixin;
+
+  padding: 2em;
+}
+
+@media (min-width: $medium-start) and (max-width: $medium-end){
+  .projects {
+    padding: 3em;
+  }
 }
