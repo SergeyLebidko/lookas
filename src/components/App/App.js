@@ -4,6 +4,7 @@ import Main from "../pages/Main/Main";
 import About from "../pages/About/About";
 import Place from "../pages/Place/Place";
 import Materials from "../pages/Materials/Materials";
+import Projects from "../pages/Projects/Projects";
 import Separator from "../common/Separator/Separator";
 import {appContext} from "../../utils/context";
 import {IMG_COUNT} from "../../constants/settings";
@@ -37,6 +38,7 @@ function App() {
                     <Separator title="C"/>
                     <Materials/>
                     <Separator title="D"/>
+                    <Projects/>
                 </>
                 }
             </appContext.Provider>
