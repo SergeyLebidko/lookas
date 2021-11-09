@@ -12,7 +12,7 @@ function MiniSlider() {
 
     const getNextSlide = slide => slide === (SLIDE_COUNT - 1) ? 0 : slide + 1;
     const toNext = () => setSlide(currentSlide => getNextSlide(currentSlide));
-    const startInterval = () => timer.current = startInterval(toNext, 5000);
+    const startInterval = () => timer.current = setInterval(toNext, 5000);
     const stopInterval = () => clearInterval(timer.current);
 
     useEffect(() => {
