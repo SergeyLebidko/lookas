@@ -68,3 +68,15 @@ export const MENU_DATA = [
         imgSource: IMG_SOURCES['restoration']
     }
 ]
+
+export const MATERIALS = [
+    'Гипс',
+    'Картон',
+    'Штукатурка',
+    'Полимерная глина',
+    'Акриловые краски',
+    'Пенопласт',
+    'Металл',
+    'Дерево',
+    'Ткань'
+]

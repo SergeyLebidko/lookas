@@ -3,19 +3,8 @@ import classNames from "classnames";
 import {appContext} from "../../../utils/context";
 import MiniSlider from "../../common/MiniSlider/MiniSlider";
 import {useVisibleControl} from "../../../utils/hooks";
+import {MATERIALS} from "../../../constants/settings";
 import "./Materials.scss";
-
-const MATERIALS = [
-    'Гипс',
-    'Картон',
-    'Штукатурка',
-    'Полимерная глина',
-    'Акриловые краски',
-    'Пенопласт',
-    'Металл',
-    'Дерево',
-    'Ткань'
-]
 
 function Materials() {
     const [hasBig, setHasBig] = useState(false);
