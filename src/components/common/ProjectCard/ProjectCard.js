@@ -8,9 +8,11 @@ function ProjectCard({title, description, img}) {
 
     return (
         <div className="project_card">
-            <h1>{title}</h1>
-            <p>{description}</p>
-            <img src={img} onLoad={imgLoadHandler}/>
+            <h1 className="project_card__title">{title}</h1>
+            <p className="project_card__description">{description}</p>
+            <div className="project_card__image_block">
+                <img className="project_card__image" src={img} onLoad={imgLoadHandler}/>
+            </div>
         </div>
     );
 }

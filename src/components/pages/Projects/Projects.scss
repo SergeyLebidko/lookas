@@ -1,13 +1,65 @@
 @import "../../../style/presets";
+@import "../../common/ProjectCard/ProjectCard";
 
 .projects {
   @include page_mixin;
+  width: 100%;
+  height: initial;
 
   padding: 2em;
+
+  background-color: $black;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 0.5em;
 }
 
-@media (min-width: $medium-start) and (max-width: $medium-end){
+@media (max-width: $ultra-small - 1px) {
+  .projects {
+    .project_card + .project_card {
+      border-top: 1px solid $gray-light;
+    }
+  }
+}
+
+@media (min-width: $ultra-small) and (max-width: $small-end) {
+  .projects {
+    grid-template-columns: 1fr 1fr;
+
+    .project_card:nth-child(n + 3) {
+      border-top: 1px solid $gray-light;
+      border-left: none;
+    }
+  }
+}
+
+@media (min-width: $medium-start) and (max-width: $medium-end) {
   .projects {
     padding: 3em;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    .project_card:nth-child(n + 4) {
+      border-top: 1px solid $gray-light;
+      border-left: none;
+    }
+  }
+}
+
+@media (min-width: $large-start) {
+  .projects {
+    width: initial;
+    height: 100%;
+
+    display: flex;
+
+    .project_card {
+      width: 25em;
+    }
+
+    .project_card + .project_card {
+      border-top: none;
+      border-left: 1px solid $gray-light;
+    }
   }
 }

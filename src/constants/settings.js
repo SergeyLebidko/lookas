@@ -33,9 +33,9 @@ export const IMG_SOURCES = {
     project0,
     project1,
     project2,
+    project3,
     project4,
     project5
-
 }
 
 export const IMG_COUNT = Object.keys(IMG_SOURCES).length;

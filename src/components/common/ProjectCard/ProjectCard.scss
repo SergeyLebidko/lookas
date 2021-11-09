@@ -1,5 +1,59 @@
 @import "../../../style/presets";
 
 .project_card {
+  min-height: 41em;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  padding: 1em;
+
+  &__title, &__description {
+    font-weight: 100;
+    color: $white
+  }
+
+  &__title {
+    font-size: 1.2em;
+    margin-bottom: 2em;
+  }
+
+  &__description {
+    text-align: justify;
+    margin-bottom: auto;
+  }
+
+  &__image_block {
+    margin-top: 2em;
+    width: 100%;
+    height: 23em;
+    border-radius: 5px;
+
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 300ms;
+
+    &:hover {
+      transform: scale(1.2);
+      filter: grayscale(1);
+    }
+  }
+}
+
+@media (min-width: $large-start) {
+  .project_card {
+    &__title {
+      font-size: 1.5em;
+    }
+  }
 }
