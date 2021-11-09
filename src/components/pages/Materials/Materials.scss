@@ -1,4 +1,5 @@
 @import "../../../style/presets";
+@import "../../common/MiniSlider/MiniSlider";
 
 @keyframes item_rise {
   from {
@@ -12,12 +13,11 @@
   }
 }
 
-
 .materials {
   @include page_mixin;
   width: 100%;
   min-height: 25em;
-  height: 30em;
+  height: 33em;
 
   padding: 2em;
 
@@ -26,6 +26,18 @@
   justify-content: flex-start;
 
   transition: all 300ms;
+
+  position: relative;
+
+  .mini_slider {
+    position: absolute;
+    top: 50%;
+    right: 2em;
+    width: 8em;
+    height: 8em;
+    transform: translateY(-50%);
+    transition: all 300ms;
+  }
 
   &__big_title, &__small_title {
     opacity: 0;
@@ -95,6 +107,12 @@
   .materials {
     padding: 3em;
 
+    .mini_slider {
+      right: 3em;
+      width: 12em;
+      height: 12em;
+    }
+
     &__big_title {
       font-size: 1.7em;
     }
@@ -111,6 +129,11 @@
     height: 100%;
 
     padding: 2em;
+
+    .mini_slider {
+      width: 16em;
+      height: 16em;
+    }
 
     &__big_title {
       font-size: 2.7em;

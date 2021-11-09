@@ -1,8 +1,9 @@
 import React, {useContext, useRef, useState} from "react";
-import {appContext} from "../../../utils/context";
-import "./Materials.scss";
 import classNames from "classnames";
+import {appContext} from "../../../utils/context";
+import MiniSlider from "../../common/MiniSlider/MiniSlider";
 import {useVisibleControl} from "../../../utils/hooks";
+import "./Materials.scss";
 
 const MATERIALS = [
     'Гипс',
@@ -35,6 +36,7 @@ function Materials() {
 
     return (
         <section className="materials" ref={elementRef}>
+            <MiniSlider/>
             <h1 className={bigClasses}>
                 Я работаю с самыми разными материалами!
             </h1>
