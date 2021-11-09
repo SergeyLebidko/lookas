@@ -10,6 +10,7 @@ import mini_slide2 from "../content/images/mini_slide2.jpg";
 import mini_slide3 from "../content/images/mini_slide3.jpg";
 import mini_slide4 from "../content/images/mini_slide4.jpg";
 import mini_slide5 from "../content/images/mini_slide5.jpg";
+// import project0 from "../content/images/project0.jpg";
 
 export const IMG_SOURCES = {
     back,
@@ -23,7 +24,8 @@ export const IMG_SOURCES = {
     mini_slide2,
     mini_slide3,
     mini_slide4,
-    mini_slide5
+    mini_slide5,
+
 }
 
 export const IMG_COUNT = Object.keys(IMG_SOURCES).length;
@@ -81,4 +83,36 @@ export const MATERIALS = [
     'Металл',
     'Дерево',
     'Ткань'
+]
+
+export const PROJECTS = [
+    {
+        title: 'Травертин',
+        description: 'Работа с травертином стало откровением для меня. ' +
+            'Когда я впервые попробовала его ... У меня пропал дар речи... ' +
+            'Я очень благодарна тому, что у меня был хороший наставник , спасибо тебе за это!\n' +
+            'До этого я работала с трафаретами меньшего размера и специальными текстурными пастами ' +
+            'из художественных магазинов... Но ничто не сравнится с травертином! Теперь я в этом уверена!',
+        img: ''
+    },
+    {
+        title: '',
+        description: '',
+        img: ''
+    },
+    {
+        title: '',
+        description: '',
+        img: ''
+    },
+    {
+        title: '',
+        description: '',
+        img: ''
+    },
+    {
+        title: '',
+        description: '',
+        img: ''
+    }
 ]
