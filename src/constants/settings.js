@@ -10,7 +10,11 @@ import mini_slide2 from "../content/images/mini_slide2.jpg";
 import mini_slide3 from "../content/images/mini_slide3.jpg";
 import mini_slide4 from "../content/images/mini_slide4.jpg";
 import mini_slide5 from "../content/images/mini_slide5.jpg";
-// import project0 from "../content/images/project0.jpg";
+import project0 from "../content/images/project0.jpg";
+import project1 from "../content/images/project1.jpg";
+import project2 from "../content/images/project2.jpg";
+import project3 from "../content/images/project3.jpg";
+import project4 from "../content/images/project4.jpg";
 
 export const IMG_SOURCES = {
     back,
@@ -25,6 +29,10 @@ export const IMG_SOURCES = {
     mini_slide3,
     mini_slide4,
     mini_slide5,
+    project0,
+    project1,
+    project2,
+    project4
 
 }
 
@@ -90,29 +98,35 @@ export const PROJECTS = [
         title: 'Травертин',
         description: 'Работа с травертином стало откровением для меня. ' +
             'Когда я впервые попробовала его ... У меня пропал дар речи... ' +
-            'Я очень благодарна тому, что у меня был хороший наставник , спасибо тебе за это!\n' +
+            'Я очень благодарна тому, что у меня был хороший наставник , спасибо тебе за это! ' +
             'До этого я работала с трафаретами меньшего размера и специальными текстурными пастами ' +
             'из художественных магазинов... Но ничто не сравнится с травертином! Теперь я в этом уверена!',
-        img: ''
+        img: project0
     },
     {
-        title: '',
-        description: '',
-        img: ''
+        title: 'Фотозона в светлых тонах',
+        description: 'Проект фотозоны, содержащей минимум необходимых элементов и оставляющей при этом впечатление большого, ' +
+            'наполненного светом пространства. По желанию заказчика кровать, как и камин, мобильна. Они на колесах, ' +
+            'поэтому пространство как трансформер может менять направление и наполнение по желанию фотографа.',
+        img: project1
     },
     {
-        title: '',
-        description: '',
-        img: ''
+        title: 'Реставрация чемодана',
+        description: 'Этот чемодан из простого и потрепанного жизнью превратился в дорогой и стильный аксессуар! ' +
+            'Были использованы латексная шпаклёвка, акриловая краска и мой любимый битумный лак',
+        img: project2
     },
     {
-        title: '',
-        description: '',
-        img: ''
+        title: 'Череп',
+        description: 'А этот череп, выполненный в стиле древних ацтекских мотивов может стать необычным элементом ' +
+            'декора кафе или даже офиса, добавив интерьеру яркую и запоминающуюся деталь',
+        img: project3
     },
     {
-        title: '',
-        description: '',
-        img: ''
+        title: 'Реставрация комода',
+        description: 'Старый советский комод, который хозяева хотели было уже выбросить, после реставрации ' +
+            'современными материалами приобрел совершенно другой вид! Теперь это яркая и функциональная деталь ' +
+            'интерьера, которая по праву стала украшением гостиной!',
+        img: project4
     }
 ]
