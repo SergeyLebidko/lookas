@@ -18,7 +18,7 @@
 @media (max-width: $ultra-small - 1px) {
   .projects {
     .project_card + .project_card {
-      border-top: 1px solid $gray-light;
+      border-top: 1px dotted $gray-light;
     }
   }
 }
@@ -28,7 +28,7 @@
     grid-template-columns: 1fr 1fr;
 
     .project_card:nth-child(n + 3) {
-      border-top: 1px solid $gray-light;
+      border-top: 1px dotted $gray-light;
       border-left: none;
     }
   }
@@ -40,7 +40,7 @@
     grid-template-columns: 1fr 1fr 1fr;
 
     .project_card:nth-child(n + 4) {
-      border-top: 1px solid $gray-light;
+      border-top: 1px dotted $gray-light;
       border-left: none;
     }
   }
@@ -59,7 +59,7 @@
 
     .project_card + .project_card {
       border-top: none;
-      border-left: 1px solid $gray-light;
+      border-left: 1px dotted $gray-light;
     }
   }
 }
