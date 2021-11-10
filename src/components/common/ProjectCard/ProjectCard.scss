@@ -30,7 +30,7 @@
   }
 
   &__description {
-    text-align: justify;
+    text-align: left;
     margin-bottom: auto;
   }
 
@@ -82,6 +82,10 @@
         border-left: 8px solid $white;
         padding-left: 0.5em;
       }
+    }
+
+    &__description {
+      text-align: justify;
     }
   }
 }
