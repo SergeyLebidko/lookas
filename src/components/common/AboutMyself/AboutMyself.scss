@@ -19,22 +19,9 @@
     font-size: 1.2em;
   }
 
-  &__big_title_rise {
-    animation-name: text_rise;
-    animation-duration: 700ms;
-    animation-fill-mode: both;
-  }
-
   &__small_title {
     font-size: 1em;
     margin-top: 0.5em;
-  }
-
-  &__small_title_rise {
-    animation-name: text_rise;
-    animation-duration: 700ms;
-    animation-fill-mode: both;
-    animation-delay: 300ms;
   }
 
   &__description {
@@ -51,13 +38,6 @@
       margin-top: 1em;
       color: $gray-light;
     }
-  }
-
-  &__description_rise {
-    animation-name: text_rise;
-    animation-duration: 700ms;
-    animation-fill-mode: both;
-    animation-delay: 600ms;
   }
 
   &__link {
@@ -97,10 +77,21 @@
     justify-content: flex-end;
   }
 
-  &__links_rise {
+  &__big_title_rise, &__small_title_rise, &__description_rise, &__links_rise {
     animation-name: text_rise;
     animation-duration: 700ms;
     animation-fill-mode: both;
+  }
+
+  &__small_title_rise {
+    animation-delay: 300ms;
+  }
+
+  &__description_rise {
+    animation-delay: 600ms;
+  }
+
+  &__links_rise {
     animation-delay: 900ms;
   }
 }

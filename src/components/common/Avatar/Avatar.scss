@@ -32,12 +32,6 @@
     clip-path: polygon(0 0, 0 0, 0 0, 0 0);
   }
 
-  &__photo_rised {
-    animation-name: v_rise;
-    animation-duration: 2000ms;
-    animation-fill-mode: both;
-  }
-
   &__logo {
     position: absolute;
     transform: translate(50%, -50%);
@@ -52,7 +46,7 @@
     transition: all 100ms;
   }
 
-  &__logo_rised {
+  &__logo_rised, &__photo_rised {
     animation-name: v_rise;
     animation-duration: 2000ms;
     animation-fill-mode: both;
@@ -68,10 +62,6 @@
       object-fit: contain;
     }
 
-    &__photo_rised {
-      animation-name: h_rise;
-    }
-
     &__logo {
       position: absolute;
       transform: translate(50%, -50%);
@@ -79,7 +69,7 @@
       height: 30vh;
     }
 
-    &__logo_rised {
+    &__logo_rised, &__photo_rised {
       animation-name: h_rise;
     }
   }

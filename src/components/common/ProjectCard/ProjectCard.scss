@@ -23,19 +23,9 @@
     margin-bottom: 2em;
   }
 
-  &__title_rise, &__description_rise, &__image_block_rise {
-    animation-name: text_rise;
-    animation-duration: 700ms;
-    animation-fill-mode: both;
-  }
-
   &__description {
     text-align: left;
     margin-bottom: auto;
-  }
-
-  &__description_rise {
-    animation-delay: 300ms;
   }
 
   &__image_block {
@@ -52,9 +42,7 @@
     overflow: hidden;
   }
 
-  &__image_block_rise {
-    animation-delay: 600ms;
-  }
+
 
   &__image {
     position: absolute;
@@ -69,6 +57,20 @@
       transform: scale(1.1);
       filter: grayscale(1);
     }
+  }
+
+  &__title_rise, &__description_rise, &__image_block_rise {
+    animation-name: text_rise;
+    animation-duration: 700ms;
+    animation-fill-mode: both;
+  }
+
+  &__description_rise {
+    animation-delay: 300ms;
+  }
+
+  &__image_block_rise {
+    animation-delay: 600ms;
   }
 }
 

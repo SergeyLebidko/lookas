@@ -28,20 +28,17 @@
     font-size: 1.2em;
   }
 
-  &__big_title_rise {
-    animation-name: text_rise;
-    animation-duration: 700ms;
-    animation-fill-mode: both;
-  }
-
   &__small_title {
     margin: 0.5em 0 0 0;
   }
 
-  &__small_title_rise {
+  &__big_title_rise, &__small_title_rise {
     animation-name: text_rise;
     animation-duration: 700ms;
     animation-fill-mode: both;
+  }
+
+  &__small_title_rise {
     animation-delay: 300ms;
   }
 }
