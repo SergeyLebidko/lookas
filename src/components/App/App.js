@@ -32,15 +32,15 @@ function App() {
                 {hasContent &&
                 <>
                     <Main/>
-                    <Separator title="A"/>
+                    <Separator title="1"/>
                     <About/>
-                    <Separator title="B"/>
+                    <Separator title="2"/>
                     <Place/>
-                    <Separator title="C"/>
+                    <Separator title="3"/>
                     <Materials/>
-                    <Separator title="D"/>
+                    <Separator title="4"/>
                     <Projects/>
-                    <Separator title="E"/>
+                    <Separator title="5"/>
                     <Final/>
                 </>
                 }
