@@ -1,6 +1,7 @@
 import React, {useRef, useState} from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
+import {PRELOADER_CAPTION} from "../../../constants/settings";
 import "./Preloader.scss";
 
 const PULSAR_RISE_MODE = 'pulsar_rise';
@@ -10,7 +11,7 @@ const PULSAR_REMOVE_MODE = 'pulsar_remove';
 const CAP_RISE_MODE = 'cap_rise';
 const CAP_REMOVE_MODE = 'cap_remove';
 
-const CAP_COUNT = 10;
+const CAP_COUNT = PRELOADER_CAPTION.length;
 const JUMP_MIN_LIMIT = 3;
 
 function Preloader({mountContent, hasAllLoad, hidePreloader}) {
@@ -19,11 +20,13 @@ function Preloader({mountContent, hasAllLoad, hidePreloader}) {
     const capAnimationCount = useRef(0);
     const pulsarJumpCount = useRef(0);
 
-    const capClasses = classNames(
+    const getCapClasses = index => classNames(
         'preloader__cap_element',
         {
-            'preloader__raised_cap_element': mode === CAP_RISE_MODE,
-            'preloader__removed_cap_element': mode === CAP_REMOVE_MODE
+            'preloader__raised_up_cap_element': (mode === CAP_RISE_MODE) && (index % 2 === 0),
+            'preloader__removed_down_cap_element': (mode === CAP_REMOVE_MODE) && (index % 2 ===0),
+            'preloader__raised_down_cap_element': (mode === CAP_RISE_MODE) && (index % 2 === 1),
+            'preloader__removed_up_cap_element': (mode === CAP_REMOVE_MODE) && (index % 2 ===1)
         }
     );
 
@@ -39,7 +42,8 @@ function Preloader({mountContent, hasAllLoad, hidePreloader}) {
     const getCapInline = index => ({
         left: `${index * (100 / CAP_COUNT)}%`,
         width: `calc(${100 / CAP_COUNT}% + 1px)`,
-        animationDelay: `${200 * (index + 3)}ms`
+        animationDelay: `${200 * (index + 3)}ms`,
+        fontSize: `${Math.floor(100 / CAP_COUNT)}vw`
     });
 
     const hasPulsar = () => mode === PULSAR_RISE_MODE || mode === PULSAR_JUMP_MODE || mode === PULSAR_REMOVE_MODE;
@@ -82,10 +86,12 @@ function Preloader({mountContent, hasAllLoad, hidePreloader}) {
                 (_, index) =>
                     <div
                         key={index}
-                        className={capClasses}
+                        className={getCapClasses(index)}
                         style={getCapInline(index)}
                         onAnimationEnd={modeSwitcher}
-                    />
+                    >
+                        {PRELOADER_CAPTION[index]}
+                    </div>
             )}
             {hasPulsar() &&
             <div

@@ -72,7 +72,7 @@ $slow-fast-bezier: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   }
 }
 
-@keyframes cap_rise {
+@keyframes cap_up_rise {
   from {
     top: -100vh;
   }
@@ -82,13 +82,33 @@ $slow-fast-bezier: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   }
 }
 
-@keyframes cap_remove {
+@keyframes cap_down_remove {
   from {
     top: 0;
   }
 
   to {
     top: 100vh;
+  }
+}
+
+@keyframes cap_down_rise {
+  from {
+    top: 100vh;
+  }
+
+  to {
+    top: 0;
+  }
+}
+
+@keyframes cap_up_remove {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: -100vh;
   }
 }
 
@@ -112,18 +132,34 @@ $slow-fast-bezier: cubic-bezier(0.55, 0.055, 0.675, 0.19);
     height: 100%;
 
     background-color: $black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: 100;
+    color: $white;
   }
 
-  &__raised_cap_element {
-    animation-name: cap_rise;
+  &__raised_up_cap_element, &__removed_down_cap_element, &__raised_down_cap_element, &__removed_up_cap_element {
     animation-duration: 800ms;
     animation-fill-mode: both;
   }
 
-  &__removed_cap_element {
-    animation-name: cap_remove;
-    animation-duration: 800ms;
-    animation-fill-mode: both;
+  &__raised_up_cap_element {
+    animation-name: cap_up_rise;
+  }
+
+  &__removed_down_cap_element {
+    animation-name: cap_down_remove;
+  }
+
+  &__raised_down_cap_element {
+    animation-name: cap_down_rise;
+  }
+
+  &__removed_up_cap_element {
+    animation-name: cap_up_remove;
   }
 
   &__pulsar {

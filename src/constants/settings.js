@@ -42,6 +42,8 @@ export const IMG_COUNT = Object.keys(IMG_SOURCES).length;
 
 export const SLIDE_COUNT = 6;
 
+export const PRELOADER_CAPTION = 'WHITE LINEN';
+
 // Граница изменения направления
 export const V_DIRECTION_LIMIT = 1023;
 export const H_DIRECTION_LIMIT = 1024;
