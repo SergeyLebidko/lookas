@@ -40,6 +40,11 @@
     }
   }
 
+  &__phone {
+    text-decoration: none;
+    color: $black;
+  }
+
   &__link {
     text-decoration: none;
     display: block;

@@ -34,8 +34,16 @@ function AboutMyself() {
                     Мы приглашаем в группу: дизайнеров, мастеров хенд-мейда, рукодельниц всех видов, фотографов и вообще
                     всех творческих людей к сотрудничеству!
                 </p>
+                <p>
+                    По вопросам сотрудничества и предоставления наших услуг вы можете обратиться по
+                    телефону <a href="tel:89180949435" className="about_myself__phone">+7 (918) 094-94-35</a> либо
+                    написать нам в соцсетях.
+                </p>
             </div>
             <div className={linksClasses}>
+                <a className="about_myself__link" href="mailto:tanyalookas@gmail.com">
+                    e-mail
+                </a>
                 <a
                     className="about_myself__link"
                     href="https://vk.com/whitelinen_snk"
