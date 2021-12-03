@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/lookas/static/css/main.d26cc158.chunk.css",
-    "main.js": "/lookas/static/js/main.a4fd566b.chunk.js",
-    "main.js.map": "/lookas/static/js/main.a4fd566b.chunk.js.map",
+    "main.js": "/lookas/static/js/main.f5c61072.chunk.js",
+    "main.js.map": "/lookas/static/js/main.f5c61072.chunk.js.map",
     "runtime-main.js": "/lookas/static/js/runtime-main.5664c300.js",
     "runtime-main.js.map": "/lookas/static/js/runtime-main.5664c300.js.map",
     "static/js/2.89a63617.chunk.js": "/lookas/static/js/2.89a63617.chunk.js",
@@ -33,6 +33,6 @@
     "static/js/runtime-main.5664c300.js",
     "static/js/2.89a63617.chunk.js",
     "static/css/main.d26cc158.chunk.css",
-    "static/js/main.a4fd566b.chunk.js"
+    "static/js/main.f5c61072.chunk.js"
   ]
 }
