@@ -3,7 +3,6 @@ import {
     V_DIRECTION_LIMIT,
     H_DIRECTION_LIMIT,
     SCROLL_STEPS_LIMIT,
-    SCROLL_TIMING,
     SCROLL_DELTA,
     H_DIRECTION,
     V_DIRECTION
@@ -29,13 +28,13 @@ export function useScrollControl(elementRef, scrollEnabled) {
                 const curScrollLeft = elementRef.current.scrollLeft;
                 elementRef.current.scrollLeft += delta;
                 if (elementRef.current.scrollLeft !== curScrollLeft && steps < SCROLL_STEPS_LIMIT) {
-                    setTimeout(() => scrollTo(delta, steps + 1), SCROLL_TIMING);
+                    requestAnimationFrame(() => scrollTo(delta, steps + 1));
                 }
             }
 
             const {deltaY} = event;
-            if (deltaY < 0) scrollTo(-SCROLL_DELTA,);
-            if (deltaY > 0) scrollTo(SCROLL_DELTA,);
+            if (deltaY < 0) requestAnimationFrame(() => scrollTo(-SCROLL_DELTA));
+            if (deltaY > 0) requestAnimationFrame(() => scrollTo(SCROLL_DELTA));
         }
 
         let oldWidth = window.innerWidth;

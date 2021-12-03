@@ -54,7 +54,6 @@ export const H_DIRECTION = 'h_direction';
 
 // Параметры горизонтального скролла
 export const SCROLL_DELTA = 2;
-export const SCROLL_TIMING = 10;
 export const SCROLL_STEPS_LIMIT = 30;
 
 export const MENU_DATA = [
